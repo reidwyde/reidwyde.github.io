@@ -1,24 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
-import { HashRouter, Routes, Route } from "react-router-dom";
-import About from "./About";
+import App from './app';
+import {HashRouter, Routes, Route} from 'react-router-dom';
+import About from './about';
+import Resume from './resume';
 
 // import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
-  <React.StrictMode>
-    <HashRouter>
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
-    </HashRouter>
-  </React.StrictMode>
+    <React.StrictMode>
+        <HashRouter>
+            <Routes>
+                <Route path="/" element={<App />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/resume" element={<Resume />} />
+            </Routes>
+        </HashRouter>
+    </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

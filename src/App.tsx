@@ -1,55 +1,48 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { Link } from "react-router-dom";
+//import logo from './logo.svg';
+import './app.css';
+// import {Link} from 'react-router-dom';
+import {Tabs} from 'antd';
+import type {TabsProps} from 'antd';
+import Resume from './resume';
+import MLCourse from './ml_course';
+import Home from './home';
+import Research from './research';
 
+// <Link to="/resume">Resume</Link>
+//
 
-function App() {
-  return (
-   <div>
-     <h1> HELLO JOY, WELCOME TO MY WEBSITE</h1>
-     <h1> HELLO DAD, WELCOME TO MY WEBSITE</h1>
-     <Link to="/about">About</Link>
-   </div>
- );
-}
+const onTabChange = (key: string) => {
+    console.log(key);
+};
 
+const tabItems: TabsProps['items'] = [
+    {
+        key: 'Home',
+        label: `Home`,
+        children: <Home />,
+    },
+    {
+        key: 'Machine Learning Course',
+        label: `Machine Learning Course`,
+        children: <MLCourse />,
+    },
 
-/*
-export default App;
-function App() {
-  return (
-   <div>
-    <h2>Github Pages</h2>
-    <h3>Deploying React to Github</h3>
-   </div>
-  );
-}
-*/
+    {
+        key: 'Research',
+        label: 'Research',
+        children: <Research />,
+    },
 
+    {
+        key: 'Resume',
+        label: `Resume`,
+        children: <Resume />,
+    },
+];
 
-/*
-export default App;
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-*/
+const App = () => {
+    return <Tabs defaultActiveKey="Home" items={tabItems} onChange={onTabChange} />;
+};
 
 export default App;
