@@ -11,8 +11,9 @@ const Research = () => {
         <>
             <h1>Under Construction</h1>
             <p>
-                I had the pleasure of working with the very talented Dr. Ernesto Lima on a research
-                project as part of the Center for Computational Oncology at UT Austin.
+                I had the pleasure of working with the extremely talented Dr. Ernesto Lima, as well
+                as Dr. Anna Sorace, and Dr. Thomas Yankeelov on a research project as part of the
+                Center for Computational Oncology at UT Austin.
             </p>
             <p>
                 In this in silico work, we developed a mathematical tissue level model of HER2+
@@ -22,10 +23,12 @@ const Research = () => {
                 to the patient.
             </p>
 
-            <p></p>
+            <p>
             <a href="https://www.sciencedirect.com/science/article/abs/pii/S0045782522005060">
                 You can access our published work here
             </a>
+            or email me at reidwyde@gmail.com for a free copy. 
+            </p>
         </>
     );
 };
