@@ -6,8 +6,8 @@ import {CenteredIframe, CenteredH2, NoMarginP, PadLeft20px} from './styled';
 const Home = () => {
     return (
         <>
+            <CenteredH2>Website currently under construction!</CenteredH2>
             <PadLeft20px>
-                <CenteredH2>Website currently under construction!</CenteredH2>
                 <h3>Welcome!</h3>
                 <p>
                     Hi, my name is Reid Wyde. I'm a software developer, data scientist, and
