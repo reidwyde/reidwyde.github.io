@@ -19,3 +19,13 @@ export const CenteredH2 = styled.h2`
     flex-direction: column;
     align-items: center;
 `;
+
+export const NoMarginH3 = styled.h3`
+    display: block;
+    margin: 0;
+`;
+
+export const NoMarginH4 = styled.h4`
+    display: block;
+    margin: 0;
+`;

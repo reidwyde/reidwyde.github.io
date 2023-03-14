@@ -3,20 +3,28 @@ import './app.css';
 import {Radio, Tabs} from 'antd';
 import type {RadioChangeEvent, TabsProps} from 'antd';
 import {CenteredIframe} from './styled';
-import lecture_1 from './resources/ml_course/lecture_1_The_Big_Picture.pdf';
+// import lecture_1 from './resources/ml_course/lecture_1_The_Big_Picture.pdf';
+import Lecture_1 from './ml_course/lecture_1_the_big_picture';
 
 const slides: TabsProps['items'] = [
     {
-        key: 'The Big Picture',
-        label: 'The Big Picture',
-        children: <CenteredIframe src={lecture_1} height="600" width="1000" frameBorder="0" />,
+        key: '1) The Big Picture',
+        label: '1) The Big Picture',
+        children: <Lecture_1 />,
     },
 ];
+
+// const MLCourse = () => {
+//     return (
+//         <div>
+//             <Tabs defaultActiveKey="1" tabPosition="left" style={{height: 1000}} items={slides} />
+//         </div>
+//     );
+// };
 
 const MLCourse = () => {
     return (
         <div>
-            <h1> This page is under construction</h1>
             <Tabs defaultActiveKey="1" tabPosition="left" style={{height: 1000}} items={slides} />
         </div>
     );

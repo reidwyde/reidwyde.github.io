@@ -135,11 +135,9 @@ Numpy, Pandas,
                             timePeriod="7/2020 – 2/2022"
                             achievements={[
                                 'Used computer vision and reinforcement learning to characterize the ocean acoustic environment',
-
                                 'Built parallel computing pipeline infrastructure to speed up data generation process 100x',
-
                                 'Collaborated with teammates on underwater acoustic simulation toolbox software design',
-                                'Created and delivered a 14 week course on data science, machine learning and deep learning. (I really enjoyed this experience, which inspired me to create the machine learning course that I now offer to you for free on this website!)',
+                                'Created and delivered a 14 week course on data science, traditional machine learning and deep learning. (I really enjoyed this experience, which inspired me to create the courses that I now offer to you for free on this website!)',
                             ]}
                         />
                         <br />

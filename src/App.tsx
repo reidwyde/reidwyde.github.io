@@ -23,11 +23,10 @@ const tabItems: TabsProps['items'] = [
         children: <Home />,
     },
     {
-        key: 'Machine Learning Course',
-        label: `Machine Learning Course`,
-        children: <MLCourse />,
+        key: 'Resume',
+        label: `Resume`,
+        children: <Resume />,
     },
-
     {
         key: 'Research',
         label: 'Research',
@@ -35,9 +34,15 @@ const tabItems: TabsProps['items'] = [
     },
 
     {
-        key: 'Resume',
-        label: `Resume`,
-        children: <Resume />,
+        key: 'Machine Learning Course',
+        label: `Machine Learning Course`,
+        children: <MLCourse />,
+    },
+    {
+        key: 'Deep Learning Course',
+        label: `Deep Learning Course`,
+        children:
+            'Deep learning course, covering simple neural networks, convolutional neural networks, recurrent neural networks, transformers, graph neural networks',
     },
 ];
 
