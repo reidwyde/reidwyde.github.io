@@ -1,15 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.14cd1c14.css",
-    "main.js": "/static/js/main.1451c6fa.js",
-    "static/media/lecture_1_The_Big_Picture.pdf": "/static/media/lecture_1_The_Big_Picture.595aedd07c2b280f7825.pdf",
+    "main.js": "/static/js/main.1ffe4ebf.js",
     "static/media/Wyde_Resume_Spring_2023.pdf": "/static/media/Wyde_Resume_Spring_2023.555d9cf44d468e5eeb57.pdf",
     "index.html": "/index.html",
     "main.14cd1c14.css.map": "/static/css/main.14cd1c14.css.map",
-    "main.1451c6fa.js.map": "/static/js/main.1451c6fa.js.map"
+    "main.1ffe4ebf.js.map": "/static/js/main.1ffe4ebf.js.map"
   },
   "entrypoints": [
     "static/css/main.14cd1c14.css",
-    "static/js/main.1451c6fa.js"
+    "static/js/main.1ffe4ebf.js"
   ]
 }
