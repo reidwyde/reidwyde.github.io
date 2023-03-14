@@ -6,6 +6,8 @@ import {HashRouter, Routes, Route} from 'react-router-dom';
 import About from './about';
 import Resume from './resume';
 
+
+
 // import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
