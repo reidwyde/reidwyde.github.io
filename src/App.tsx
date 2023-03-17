@@ -42,7 +42,7 @@ const tabItems: TabsProps['items'] = [
         key: 'Deep Learning Course',
         label: `Deep Learning Course`,
         children:
-            'Deep learning course, covering simple neural networks, convolutional neural networks, recurrent neural networks, transformers, graph neural networks',
+            'Deep learning course, covering simple neural networks, convolutional neural networks, recurrent neural networks, transformers, graph neural networks, deep reinforcement learning, auto-ml',
     },
 ];
 

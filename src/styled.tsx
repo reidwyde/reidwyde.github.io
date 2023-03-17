@@ -5,6 +5,22 @@ export const CenteredIframe = styled.iframe`
     margin: 0 auto;
 `;
 
+export const CenteredImg = styled.img`
+    display: block;
+    margin: 0 auto;
+`;
+
+export const BoldSpan = styled.span`
+    font-weight: bold;
+    padding: 0 5px;
+`;
+
+export const Centered = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
 export const NoMarginP = styled.p`
     display: block;
     margin: 0;
@@ -12,6 +28,14 @@ export const NoMarginP = styled.p`
 
 export const PadLeft20px = styled.div`
     padding-left: 20px;
+`;
+
+export const PadLeft2perc = styled.div`
+    padding-left: 2%;
+`;
+
+export const PadRight8perc = styled.div`
+    padding-right: 8%;
 `;
 
 export const CenteredH2 = styled.h2`
