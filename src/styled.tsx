@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {Button} from 'antd';
 
 export const CenteredIframe = styled.iframe`
     display: block;
@@ -52,4 +53,8 @@ export const NoMarginH3 = styled.h3`
 export const NoMarginH4 = styled.h4`
     display: block;
     margin: 0;
+`;
+
+export const StyledButton = styled(Button)`
+    background: #FAFAFA;
 `;

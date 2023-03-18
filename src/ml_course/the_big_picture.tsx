@@ -18,16 +18,21 @@ import lecture_1 from './resources/ml_course/lecture_1_The_Big_Picture.pdf';
 import {Link} from 'react-scroll';
 import channel_image from './images/real_channel_vs_in_silico_model.PNG';
 
-const content = (
+export default () => (
     <PadLeft2perc>
         <PadRight8perc>
-            <h2>Lesson 1: The Big Picture</h2>
+            <h2>The Big Picture</h2>
             <h3> Outline</h3>
 
             <ol>
                 <li>
                     <Link to="a-word-of-caution" smooth={true}>
                         A Word of Caution
+                    </Link>
+                </li>
+                <li>
+                    <Link to="sources" smooth={true}>
+                        Sources
                     </Link>
                 </li>
 
@@ -109,11 +114,6 @@ const content = (
                     </Link>
                 </li>
 
-                <li>
-                    <Link to="extra-resources" smooth={true}>
-                        Extra Resources
-                    </Link>
-                </li>
             </ol>
 
             <br />
@@ -179,6 +179,33 @@ const content = (
                 </p>
 
                 <h4>Don't say I didn't warn you!</h4>
+            </div>
+
+            <div id="sources">
+                <NoMarginH3>Sources / Extra Resources</NoMarginH3>
+                <p>
+                    If you'd like to go straight to the source, these are the resources that I would
+                    recommend. Each lesson will also contain a list of relevant resources. I would
+                    like to express my deepest thanks to the authors. Their teaching has been
+                    invaluable.
+                </p>
+                <ul>
+                    <li>Mitchell, T. (1997). Machine Learning. McGraw Hill.</li>
+                    <li>
+                        Ng, A. (2017). Machine Learning. Coursera online course, Stanford
+                        University.
+                    </li>
+
+                    <li>
+                        Sadun, L. (2007). Applied Linear Algebra: The Decoupling Principle. American
+                        Mathematical Society.
+                    </li>
+
+                    <li>
+                        Sutton, R. S., & Barto, A. G. (2018). Reinforcement learning: An
+                        introduction (2nd ed.). The MIT Press.
+                    </li>
+                </ul>
             </div>
 
             <br />
@@ -286,16 +313,6 @@ const content = (
             <div id="closing-thoughts">
                 <NoMarginH3>14. Closing Thoughts</NoMarginH3>
             </div>
-
-            <div id="extra-resources">
-                <NoMarginH3>15. Extra Resources</NoMarginH3>
-            </div>
         </PadRight8perc>
     </PadLeft2perc>
 );
-
-const MLCourse = () => {
-    return content;
-};
-
-export default MLCourse;

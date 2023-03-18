@@ -6,6 +6,7 @@ import {Tabs} from 'antd';
 import type {TabsProps} from 'antd';
 import Resume from './resume';
 import MLCourse from './ml_course';
+import DLCourse from './dl_course';
 import Home from './home';
 import Research from './research';
 
@@ -41,8 +42,7 @@ const tabItems: TabsProps['items'] = [
     {
         key: 'Deep Learning Course',
         label: `Deep Learning Course`,
-        children:
-            'Deep learning course, covering simple neural networks, convolutional neural networks, recurrent neural networks, transformers, graph neural networks, deep reinforcement learning, auto-ml',
+        children: <DLCourse />,
     },
 ];
 
