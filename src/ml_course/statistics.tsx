@@ -25,7 +25,7 @@ export default () => (
                         children: 'Confidence intervals and p-values',
                     },
                     {link: 'power-of-a-test', children: 'Power of a Test'},
-                    {link: 'bayesian-classification', children: 'Bayesian classification'},
+                    { link: 'causal-inference', children: 'Causal Inference'},
                 ]}
             />
 
@@ -44,9 +44,6 @@ export default () => (
                 <h3>Power of a Test</h3>
             </div>
 
-            <div id="bayesian-classification">
-                <h3>Bayesian classification</h3>
-            </div>
         </PadRight8perc>
     </PadLeft2perc>
 );

@@ -15,6 +15,8 @@ export default () => (
                         children: 'Gradients: Derivatives of Multivariate Functions',
                     },
                     {link: 'gradient-descent', children: 'Gradient Descent'},
+                    {link: 'stochastic-gradient-descent', children: 'Stochastic Gradient Descent'},
+                    {link: 'batch-gradient-descent', children: 'Batch Gradient Descent'},
                 ]}
             />
 
@@ -26,6 +28,14 @@ export default () => (
             </div>
             <div id="gradient-descent">
                 <h3>Gradient Descent</h3>
+            </div>
+
+            <div id="stochastic-gradient-descent">
+                <h3>Stochastic Gradient Descent</h3>
+            </div>
+
+            <div id="batch-gradient-descent">
+                <h3>Batch Gradient Descent</h3>
             </div>
         </PadRight8perc>
     </PadLeft2perc>

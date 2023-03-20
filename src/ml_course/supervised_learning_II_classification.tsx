@@ -21,6 +21,13 @@ export default () => (
                         link: 'Logistic Regression',
                         children: 'Logistic Regression',
                     },
+
+        {
+                        link: 'bayesian-classification',
+                        children: 'Logistic Regression',
+                    },
+
+
                     {
                         link: 'K Nearest Neighbors',
                         children: 'K Nearest Neighbors',
@@ -53,6 +60,10 @@ export default () => (
             <div id="Logistic Regression">
                 <h3>Logistic Regression</h3>
             </div>
+                <div id="Bayesian Classification">
+                <h3>Bayesian Classification</h3>
+            </div>
+
             <div id="K Nearest Neighbors">
                 <h3>K Nearest Neighbors</h3>
             </div>

@@ -9,6 +9,8 @@ import MLCourse from './ml_course';
 import DLCourse from './dl_course';
 import Home from './home';
 import Research from './research';
+import {Layout} from 'antd';
+const {Header, Content, Footer} = Layout;
 
 // <Link to="/resume">Resume</Link>
 //
@@ -46,8 +48,11 @@ const tabItems: TabsProps['items'] = [
     },
 ];
 
-const App = () => {
-    return <Tabs centered defaultActiveKey="Home" items={tabItems} onChange={onTabChange} />;
-};
+
+const App = () => (
+    <>
+        <Tabs centered defaultActiveKey="Home" items={tabItems} onChange={onTabChange} />
+    </>
+);
 
 export default App;

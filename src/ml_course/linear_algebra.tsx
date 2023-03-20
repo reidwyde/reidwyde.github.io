@@ -9,7 +9,7 @@ export default () => (
             <h3> Outline</h3>
             <ListOfLinks
                 lcs={[
-                    {link: 'intro', children: 'Why Linear Algebra?'},
+                    {link: 'what-is-linear-algebra', children: 'What Is Linear Algebra?'},
                     {link: 'vectors', children: 'Vectors'},
                     {link: 'matrices', children: 'Matrices'},
                     {link: 'inner-product', children: 'Inner Products'},
@@ -27,7 +27,7 @@ export default () => (
             />
 
             <div id="intro">
-                <h3>Why Linear Algebra?</h3>
+                <h3>What Is Linear Algebra?</h3>
             </div>
             <div id="vectors">
                 <h3>Vectors</h3>

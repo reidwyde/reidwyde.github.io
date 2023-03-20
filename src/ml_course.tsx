@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import './app.css';
 import {Radio, Tabs} from 'antd';
 import type {RadioChangeEvent, TabsProps} from 'antd';
@@ -20,16 +20,14 @@ import LessonRL from './ml_course/reinforcement_learning';
 import {animateScroll} from 'react-scroll';
 import {Row, Col} from 'antd';
 import {ArrowLeftOutlined, ArrowRightOutlined} from '@ant-design/icons';
-import {StyledButton as Button} from './styled';
+import {StyledButton as Button, PadRight8perc} from './styled';
+import CopyrightFooter from './components/CopyrightFooter';
+import {Layout} from 'antd';
+const {Header, Content, Footer} = Layout;
 
 const scrollToTop = () => {
     animateScroll.scrollToTop({duration: 0});
 };
-
-// import React, { useState } from 'react';
-// import { Tabs } from 'antd';
-
-// const { TabPane } = Tabs;
 
 const MLCourse = () => {
     const lessons: TabsProps['items'] = [
@@ -158,24 +156,28 @@ const MLCourse = () => {
     };
 
     return (
-        <div>
-            <Tabs
-                activeKey={keys[activeIdx]}
-                onChange={setActiveIdxWithKey}
-                tabPosition="left"
-                style={{height: 1000}}
-                items={lessons.map((lesson) => ({
-                    ...lesson,
-                    children: (
-                        <>
+        <Tabs
+            activeKey={keys[activeIdx]}
+            onChange={setActiveIdxWithKey}
+            tabPosition="left"
+            style={{height: 1000}}
+            items={lessons.map((lesson) => ({
+                ...lesson,
+                forceRender: true,
+                children: (
+                    <>
+                        <PadRight8perc>
                             <BackwardForwardButtons />
-                            {lesson.children}
+                        </PadRight8perc>
+                        {lesson.children}
+                        <PadRight8perc>
                             <BackwardForwardButtons />
-                        </>
-                    ),
-                }))}
-            />
-        </div>
+                        </PadRight8perc>
+                        <br />
+                    </>
+                ),
+            }))}
+        />
     );
 };
 
