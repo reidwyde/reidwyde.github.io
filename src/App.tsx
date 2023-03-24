@@ -48,7 +48,6 @@ const tabItems: TabsProps['items'] = [
     },
 ];
 
-
 const App = () => (
     <>
         <Tabs centered defaultActiveKey="Home" items={tabItems} onChange={onTabChange} />
