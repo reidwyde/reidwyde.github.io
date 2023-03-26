@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
 import './app.css';
-import {Radio, Tabs} from 'antd';
-import type {RadioChangeEvent, TabsProps} from 'antd';
-import {CenteredIframe} from './styled';
+import {Tabs} from 'antd';
+import type {TabsProps} from 'antd';
+import NavBar from './components/navBar';
+
 // import LessonNeuralNetworks from './dl_course/neural_networks';
 
 const lessons: TabsProps['items'] = [
@@ -48,10 +48,9 @@ const lessons: TabsProps['items'] = [
     key: `${idx + 1}`,
 }));
 
-const DLCourse = () => (
-    <div>
-        <Tabs defaultActiveKey="1" tabPosition="left" style={{height: 1000}} items={lessons} />
-    </div>
+export default () => (
+    <>
+        <NavBar activeTabKey="deep-learning-course" />
+        <Tabs defaultActiveKey="1" tabPosition="left" items={lessons} />
+    </>
 );
-
-export default DLCourse;

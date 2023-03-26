@@ -1,10 +1,7 @@
-import {Link} from 'react-router-dom';
-import React, {useState} from 'react';
-import {Document, Page} from 'react-pdf/dist/esm/entry.webpack5';
 import resume from './resources/Wyde_Resume_Spring_2023.pdf';
-import {CenteredIframe, NoMarginP, PadLeft20px} from './styled';
-import styled from 'styled-components';
+import {NoMarginP, PadLeft20px} from './styled';
 import {Col, Row} from 'antd';
+import NavBar from './components/navBar';
 
 const SectionHeader = ({children}: {children: string}) => <b>{children}: </b>;
 
@@ -49,6 +46,7 @@ const WorkExperience = ({
 const Resume = () => {
     return (
         <>
+            <NavBar activeTabKey="resume" />
             <Row>
                 <Col span={24}>
                     <PadLeft20px>

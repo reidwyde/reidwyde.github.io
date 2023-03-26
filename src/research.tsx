@@ -1,8 +1,6 @@
-import React from 'react';
 import './app.css';
-import {Tabs} from 'antd';
-import type {TabsProps} from 'antd';
 import {PadLeft20px, NoMarginH3, NoMarginH4} from './styled';
+import NavBar from './components/navBar';
 
 // <Link to="/resume">Resume</Link>
 //
@@ -10,6 +8,7 @@ import {PadLeft20px, NoMarginH3, NoMarginH4} from './styled';
 const Research = () => {
     return (
         <>
+            <NavBar activeTabKey="research" />
             <PadLeft20px>
                 <NoMarginH3>
                     Optimizing combination therapy in a murine model of HER2+ breast cancer

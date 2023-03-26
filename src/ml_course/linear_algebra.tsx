@@ -1,5 +1,4 @@
 import {PadLeft2perc, PadRight8perc} from '../styled';
-import {Link} from 'react-scroll';
 import ListOfLinks from '../components/ListOfLinks';
 import Tex from '@matejmazur/react-katex';
 import {Centered} from '../styled';
@@ -89,20 +88,15 @@ export default () => (
                     columns)".
                 </p>
                 <p>For example:</p>
-                <Centered>
-                    {matrix32}
-                </Centered>
+                <Centered>{matrix32}</Centered>
                 <Centered>
                     <p>A 3x2 matrix</p>
                 </Centered>
-                <Centered>
-                    {matrix23}
-                </Centered>
-    
+                <Centered>{matrix23}</Centered>
+
                 <Centered>
                     <p>A 2x3 matrix</p>
                 </Centered>
-
             </div>
             <div id="vector-spaces">
                 <h3>Vector Spaces</h3>

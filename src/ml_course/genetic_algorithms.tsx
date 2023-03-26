@@ -1,5 +1,4 @@
 import {PadLeft2perc, PadRight8perc} from '../styled';
-import {Link} from 'react-scroll';
 import ListOfLinks from '../components/ListOfLinks';
 
 /*

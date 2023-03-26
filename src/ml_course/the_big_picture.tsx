@@ -1,23 +1,19 @@
-import React, {useRef} from 'react';
 import '../app.css';
-import {Radio, Tabs} from 'antd';
-import type {RadioChangeEvent, TabsProps} from 'antd';
 import {
-    CenteredIframe,
     NoMarginP,
-    PadLeft20px,
     PadLeft2perc,
     PadRight8perc,
     NoMarginH3,
     NoMarginH4,
     CenteredImg,
     Centered,
-    BoldSpan,
 } from '../styled';
-import lecture_1 from './resources/ml_course/lecture_1_The_Big_Picture.pdf';
+import MlvsHuman from './images/ml_vs_human.PNG';
 import {Link} from 'react-scroll';
+import {Link as RouteLink} from 'react-router-dom';
 import channel_image from './images/real_channel_vs_in_silico_model.PNG';
 
+// export default ({setActiveTab}: {setActiveTab: (key: string) => void}) => (
 export default () => (
     <PadLeft2perc>
         <PadRight8perc>
@@ -26,6 +22,12 @@ export default () => (
 
             <ol>
                 <li>
+                    <Link to="the-unbridled-power-of-machine-learning" smooth={true}>
+                        Why You Should Take This Course: The Unbridled Power of Machine Learning
+                    </Link>
+                </li>
+
+                <li>
                     <Link to="data-driven-modeling" smooth={true}>
                         Data Driven Modeling
                     </Link>
@@ -33,12 +35,6 @@ export default () => (
                 <li>
                     <Link to="sources" smooth={true}>
                         Sources
-                    </Link>
-                </li>
-
-                <li>
-                    <Link to="the-unbridled-power-of-machine-learning" smooth={true}>
-                        The Unbridled Power of Machine Learning
                     </Link>
                 </li>
 
@@ -78,7 +74,7 @@ export default () => (
 
                 <li>
                     <Link to="data-leakage" smooth={true}>
-                        Data Leakage
+                        Data Leakage / Data Contamination
                     </Link>
                 </li>
 
@@ -107,20 +103,126 @@ export default () => (
                 </li>
 
                 <li>
-                    <Link to="k-folds" smooth={true}>
-                        K-Folds Cross Validation
+                    <Link to="k-fold" smooth={true}>
+                        K-Fold Cross Validation
                     </Link>
                 </li>
             </ol>
 
             <br />
-            <div id="a-word-of-caution">
-                <h3>Data Driven Modeling</h3>
+
+            <div id="the-unbridled-power-of-machine-learning">
+                <NoMarginH3>
+                    Why You Should Take This Course: The Unbridled Power of Machine Learning
+                </NoMarginH3>
+                <NoMarginH4>Why You Should Understand Machine Learning</NoMarginH4>
+                <p>Data has become plentiful.</p>
+                <a href={'https://www.statista.com/statistics/871513/worldwide-data-created/'}>
+                    Some estimates{' '}
+                </a>
+                put the total amount in 2023 at well over 100 zetabytes.
+                <i> That's 100 trillion gigabytes.</i>
+                <p>
+                    Machine learning (ML) is the set of techniques that can automatically process
+                    data, allowing us (the machine learning practitioner) to do useful things.
+                    Literally, we automate the process of discovering new information.
+                </p>
+                <Centered>
+                    <img height="300" src={MlvsHuman} />
+                </Centered>
+                <Centered>
+                    <a href="https://www.ted.com/talks/jeremy_howard_the_wonderful_and_terrifying_implications_of_computers_that_can_learn">
+                        source
+                    </a>
+                </Centered>
+                <p>
+                    There are two ways we can use this information: <b>better business</b> and{' '}
+                    <b>better products</b>
+                </p>
+                <NoMarginH4>You Do Better Business, Because ML Shows You:</NoMarginH4>
+                <ul>
+                    <li>How to know what your customers want</li>
+                    <li>How to get more customers</li>
+                    <li>How to make more money from each customer</li>
+                    <li>How to keep your customers for longer</li>
+                    <li>How to lower costs</li>
+                    <li>How to deliver on your customers' needs faster</li>
+                    <li>How to evaluate tradeoffs in your business</li>
+                </ul>
+                <p>
+                    ML techniques that answer these business questions are called "data analytics".
+                    Anyone in an executive, managerial, or customer facing role needs to know how to
+                    use ML to answer these questions.
+                </p>
+                <NoMarginH4>You Make Better Products, Because ML Enables You To:</NoMarginH4>
+                <ul>
+                    <li>Use data to make your product and improve it's performance</li>
+                </ul>
+                <p>
+                    The concept is simple: you leverage data (cheap) to make a product ($$$), so you
+                    win.
+                </p>
+                <p>
+                    If you already have a ton of data and an amazing product, you should check out
+                    my course on <RouteLink to="/ml-ops-course">ML operations</RouteLink>, which
+                    lets you
+                    <b> improve and deliver your product automatically and continuously.</b>
+                </p>
+                {/*
+                <p>
+                    One reason why machine learning is so powerful is its ability to process vast
+                    amounts of data quickly and accurately. Machine learning models can analyze
+                    massive datasets, identify patterns, and make predictions with a level of
+                    accuracy that is often beyond human capabilities. This has led to the
+                    development of automated decision-making systems that can be used in a wide
+                    range of applications, including fraud detection, marketing, and self-driving
+                    cars.
+                </p>
+                <p>
+                    However, this power also comes with risks. As machine learning algorithms become
+                    increasingly sophisticated, they may begin to make decisions that are difficult
+                    to understand or even impossible to explain. This can lead to a loss of
+                    transparency and accountability in decision-making processes, with potentially
+                    serious consequences. The increasing adoption of machine learning has the
+                    potential to revolutionize many industries, but it also raises concerns about
+                    the power that these data-driven models may wield. As machine learning
+                    algorithms continue to improve in accuracy and complexity, they are being used
+                    to make decisions that have significant real-world consequences. From medical
+                    diagnoses to credit risk assessments, machine learning is being used to automate
+                    decision-making processes that were previously the domain of human experts.
+                </p>
+                <p>
+                    By taking this course, you will be well poised to take advantage of these
+                    amazing systems, while also gaining key insights that will help you avoid their
+                    pitfalls.
+                </p>
+                */}
+                <br />
+                <NoMarginH4>Why You Should Take This Course Specifically</NoMarginH4>
+                <p>Machine learning is necessary. This course is sufficient.</p>
+                <p>
+                    This course covers everything you need to know about traditional machine
+                    learning, straight through, with no stops. I cover all background knowledge, and
+                    each lesson builds from previous lessons. At times, I will recommend outside
+                    resources, but they are strictly <b> not necessary</b>. This course is all you
+                    need!
+                </p>
+                <p>
+                    Once you have completed this course, I recommend you "go deep" on deep neural
+                    networks with my course on{' '}
+                    <RouteLink to="/deep-learning-course">deep learning</RouteLink> or learn how to
+                    productionize your knowledge with my course on{' '}
+                    <RouteLink to="/ml-ops-course">ML operations</RouteLink>.
+                </p>
+            </div>
+            <br />
+            <div id="data-driven-modeling">
+                <NoMarginH3>Data Driven Modeling</NoMarginH3>
 
                 <p>
                     Lately "artificial intelligence" and "machine learning" are popular terms
                     attracting a lot of time, money, and attention. The venerable
-                    <a href="https://en.wikipedia.org/wiki/Andrew_Ng">{` Dr. Andrew Ng `}</a>
+                    <a href="https://www.andrewng.org/">{` Dr. Andrew Ng `}</a>
                     stresses that "Data is food for AI." This is why I actually prefer the term
                     "data driven modeling" to "machine learning", since it stresses the primacy of
                     data in these techniques. Nevertheless, in this course, I will use both terms
@@ -152,31 +254,8 @@ export default () => (
                     <a href="http://incompleteideas.net/IncIdeas/BitterLesson.html">
                         {` The Bitter Lesson`}
                     </a>
-                    , by Dr. Richard Sutton, a titan of machine learning.
-                </p>
-
-                <p>
-                    Machine learning comprises several entire fields of study. This course is but a
-                    brief introduction. Still, I hope that this course will make it possible for you
-                    to put these techniques into practice. In this first lesson, we will cover the
-                    basic techniques that any practitioner of data driven modeling should
-                    understand. As we continue, we will build in complexity.
-                </p>
-
-                <p>
-                    This course will stop before a discussion of deep neural networks and deep
-                    learning. This course will lay the foundation for understanding the techniques
-                    in that field. Once you have completed this course, I recommend you continue on
-                    to my course on deep learning.
-                </p>
-
-                <NoMarginH4>A Word of Caution</NoMarginH4>
-                <p>
-                    Deploying machine learning solutions to production can often increase complexity
-                    in your application. It requires specialized infrastructure to deal with your
-                    data, reduces transparency in the system, and ties performance improvements
-                    directly to your ability to get more data, which can mean increased costs.
-                    Remember: "No code is better than no code".
+                    , by<a href="http://www.incompleteideas.net/"> Dr. Richard Sutton</a>, a titan
+                    of machine learning.
                 </p>
             </div>
             <br />
@@ -208,40 +287,6 @@ export default () => (
                 </ul>
             </div>
 
-            <br />
-
-            <div id="the-unbridled-power-of-machine-learning">
-                <NoMarginH3>The Unbridled Power of Machine Learning</NoMarginH3>
-                <p>
-                    One reason why machine learning is so powerful is its ability to process vast
-                    amounts of data quickly and accurately. Machine learning models can analyze
-                    massive datasets, identify patterns, and make predictions with a level of
-                    accuracy that is often beyond human capabilities. This has led to the
-                    development of automated decision-making systems that can be used in a wide
-                    range of applications, including fraud detection, marketing, and self-driving
-                    cars.
-                </p>
-
-                <p>
-                    However, this power also comes with risks. As machine learning algorithms become
-                    increasingly sophisticated, they may begin to make decisions that are difficult
-                    to understand or even impossible to explain. This can lead to a loss of
-                    transparency and accountability in decision-making processes, with potentially
-                    serious consequences. The increasing adoption of machine learning has the
-                    potential to revolutionize many industries, but it also raises concerns about
-                    the power that these data-driven models may wield. As machine learning
-                    algorithms continue to improve in accuracy and complexity, they are being used
-                    to make decisions that have significant real-world consequences. From medical
-                    diagnoses to credit risk assessments, machine learning is being used to automate
-                    decision-making processes that were previously the domain of human experts.
-                </p>
-
-                <p>
-                    By taking this course, you will be well poised to take advantage of these
-                    amazing systems, while also gaining key insights that will help you avoid their
-                    pitfalls.
-                </p>
-            </div>
             <br />
 
             <div id="defining-machine-learning">
@@ -460,16 +505,20 @@ export default () => (
 
             <br />
             <div id="data-leakage">
-                <NoMarginH3>Data Leakage</NoMarginH3>
+                <NoMarginH3>Data Leakage / Data Contamination</NoMarginH3>
                 <p>
-                    Data leakage in machine learning refers to a situation where information from
-                    outside of the training dataset is used to create or evaluate a model. This can
-                    lead to inflated performance metrics and ultimately, a model that does not
-                    perform well on new, unseen data. For example, if the target variable is whether
-                    or not a customer will buy a product, and information about whether or not they
-                    returned the product is included in the training data, this would be considered
-                    target leakage because the model is using information about the future to make
-                    predictions.
+                    Data leakage (a.k.a. "data contamination") in machine learning refers to a
+                    situation where the model is evaluated on testing data that the model had access
+                    to during training. This can lead to inflated testing performance metrics and
+                    ultimately, a model that does not perform well on new, unseen data. For example,
+                    if the target variable is whether or not a customer will buy a product, and
+                    information about whether or not they returned the product is included in the
+                    training data, this would be considered target leakage because the model can use
+                    that information to make predictions. Another example would be a model that
+                    takes audio data and classifies whether the speaker is male or female. If audio
+                    from the same speaker is in the training and testing data, then data leakage has
+                    occurred. To prevent data leakage, the testing data should have completely
+                    different speakers than the training data.
                 </p>
                 <p>
                     <b>
@@ -622,8 +671,8 @@ export default () => (
             </div>
             <br />
 
-            <div id="k-folds">
-                <NoMarginH3>K-Folds Cross Validation</NoMarginH3>
+            <div id="k-fold">
+                <NoMarginH3>K-Fold Cross Validation</NoMarginH3>
                 <p>
                     K-fold cross-validation is a technique used to evaluate the performance of
                     machine learning models. It involves partitioning a dataset into k equal

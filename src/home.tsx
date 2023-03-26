@@ -1,7 +1,8 @@
 import React from 'react';
 import './app.css';
+import NavBar from './components/navBar';
 
-import {CenteredIframe, CenteredH2, NoMarginP, PadLeft20px} from './styled';
+import {NoMarginP, PadLeft20px} from './styled';
 
 // . While you're here, why
 //                     not check out my resume, my research, or my free course on machine learning? (No
@@ -18,25 +19,23 @@ import {CenteredIframe, CenteredH2, NoMarginP, PadLeft20px} from './styled';
 //                     you'll find some of the resources on this website useful.
 //                 </p>
 
-
-
-
 const Home = () => {
     return (
         <>
+            <NavBar activeTabKey="home" />
             <PadLeft20px>
                 <h3>Welcome!</h3>
                 <p>
-                    Hi, my name is Reid Wyde. I'm a software developer, data scientist, and
-                    published researcher, born and raised in Dallas, Texas.
+                    Hi, my name is Reid Wyde. I'm a software developer, machine learning engineer,
+                    data scientist, and published researcher, born and raised in Dallas, Texas.
                 </p>
                 <p>This website is the home of my professional portfolio.</p>
                 <br />
 
-                                <p>If you have any questions, feel free to reach out!</p>
+                <p>If you have any questions, feel free to reach out.</p>
                 <br />
 
-                <NoMarginP>Peace and love,</NoMarginP>
+                <NoMarginP>Good Luck,</NoMarginP>
                 <NoMarginP>Reid</NoMarginP>
                 <NoMarginP>214-870-4733</NoMarginP>
                 <NoMarginP>reidwyde@gmail.com</NoMarginP>
