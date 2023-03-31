@@ -8,10 +8,20 @@ import {
     CenteredImg,
     Centered,
 } from '../styled';
-import MlvsHuman from './images/ml_vs_human.PNG';
 import {Link} from 'react-scroll';
 import {Link as RouteLink} from 'react-router-dom';
 import channel_image from './images/real_channel_vs_in_silico_model.PNG';
+import MlvsHuman from './images/ml_vs_human.PNG';
+import xkcd_extrapolation from './images/xkcd_extrapolation.PNG';
+import overfitting from './images/overfitting.PNG';
+import train_vs_test_loss_curve from './images/train_vs_test_loss_curve.PNG';
+import learning_curve_accuracy from './images/learning_curve_accuracy.PNG';
+import high_bias_vs_high_variance_learning_curves from './images/high_bias_vs_high_variance_learning_curves.PNG';
+import bias_variance_tradeoff_regimes from './images/bias_variance_tradeoff_regimes.PNG';
+import augmentation from './images/augmentation.PNG';
+import validation_loop from './images/validation_loop.PNG';
+import Tex from '@matejmazur/react-katex';
+import rl_agent_environment from './images/rl_agent_environment_interface2.PNG';
 
 // export default ({setActiveTab}: {setActiveTab: (key: string) => void}) => (
 export default () => (
@@ -444,6 +454,21 @@ export default () => (
                     robotics, game playing, and autonomous vehicles, among others.
                 </p>
             </div>
+            <CenteredImg src={rl_agent_environment} height={200} />
+            <Centered>source: Sutton and Barto (2018) pg. 48</Centered>
+            <br />
+            <div id="iteration-batch-epoch">
+                <NoMarginH3>Iterations, Batches, Epochs</NoMarginH3>
+                <p>
+                    A single training iteration means that the model has had one experience. That
+                    experience might be based on a single datapoint or a batch of datapoints (a
+                    batch refers to multiple datapoints, but less than the whole dataset).
+                </p>
+                <p>
+                    The model experiences an epoch of training every time it iterates through the
+                    entire set of training data.
+                </p>
+            </div>
 
             <br />
             <div id="generalization">
@@ -470,6 +495,10 @@ export default () => (
                     patterns and relationships in the data.
                 </p>
             </div>
+            <CenteredImg src={xkcd_extrapolation} height={300} />
+            <Centered>
+                <a href="https://xkcd.com/605">source: Randall Munroe, xkcd.com</a>
+            </Centered>
 
             <br />
             <div id="partition-data">
@@ -528,20 +557,54 @@ export default () => (
                         </Centered>
                     </b>
                 </p>
+                <p>
+                    More generally, anytime information that is not available to the model when it
+                    is used (after training and testing) is made available during training, data
+                    leakage has occurred.
+                </p>
             </div>
             <br />
 
             <div id="learning-curves">
+                <NoMarginH3>Learning Curves</NoMarginH3>
+                <p>
+                    <p>
+                        Learning curves are graphical representations of a model's performance over
+                        time as the amount of training data increases. By plotting the model's
+                        training and testing error (the difference between the model output and the
+                        target variable) as a function of the number of training samples, learning
+                        curves can help to diagnose problems such as overfitting or underfitting.
+                    </p>
+
+                    <Centered>
+                        <b>
+                            Example Learning Curve of Loss Function vs Number of Training Iterations
+                            <br />
+                        </b>
+                    </Centered>
+                    <CenteredImg src={train_vs_test_loss_curve} height={280} />
+                    <Centered>
+                        As training continues, the curve descends. Eventually testing error stops
+                        improving.
+                    </Centered>
+                    <br />
+
+                    <Centered>
+                        <b>Example Learning Curve of Accuracy vs Number of Training Epochs</b>
+                    </Centered>
+
+                    <CenteredImg src={learning_curve_accuracy} height={340} />
+                    <Centered>
+                        As training continues, the accuracy curve ascends. Eventually testing accuracy 
+                        stops improving.
+                    </Centered>
+                </p>
+            </div>
+
+            <div id="underfitting-overfitting">
                 <NoMarginH3>
                     Learning Curves, Underfitting, Overfitting, Bias-Variance Tradeoff
                 </NoMarginH3>
-                <p>
-                    Learning curves are graphical representations of a model's performance over time
-                    as the amount of training data increases. By plotting the model's training and
-                    testing error (the difference between the model output and the target variable)
-                    as a function of the number of training samples, learning curves can help to
-                    diagnose problems such as overfitting or underfitting.
-                </p>
                 <p>
                     Underfitting occurs when a model is too simple to capture the complexity of the
                     data and performs poorly on both the training and testing data. This can be
@@ -564,6 +627,81 @@ export default () => (
                     goal is to find a model that strikes a balance between bias and variance that
                     performs well on both the training and testing data.
                 </p>
+                <Centered>
+                    <b>Learning curves of high bias vs high variance models</b>
+                </Centered>
+                <CenteredImg src={high_bias_vs_high_variance_learning_curves} height={200} />
+                <br />
+                <Centered>
+                    <b>The longer training continues, the more likely overfitting is to occur</b>
+                </Centered>
+                <CenteredImg src={bias_variance_tradeoff_regimes} height={300} />
+                The difference between the training error and the testing error is called the
+                "generalization gap". We want the generalization gap to be as small as possible.
+            </div>
+            <br />
+            <div id="regularization">
+                <NoMarginH3>Regularization</NoMarginH3>
+                <p>
+                    Regularization is how we shrink the generalization gap. We add a regularization
+                    term to the objective function, so that the objective function depends on both
+                    the performance of the model with respect to the data, and the value of the
+                    model parameters.
+                </p>
+
+                <p>
+                    For example, our model is the polynomial curve:
+                    <Centered>
+                        <Tex>{`f(x) = a_0x^0 + a_1x^1 + a_2x^2 + a_3x^3 + a_4x^4 + ... `}</Tex>
+                    </Centered>
+                </p>
+                <p>
+                    The model parameters are the values of a:
+                    <Centered>
+                        <Tex>{`a_0, a_1, a_2, a_3, a_4, ... `}</Tex>
+                    </Centered>
+                </p>
+
+                <p>
+                    Our data is a set of points on the x, y plane. We have N total datapoints:
+                    <Centered>
+                        <Tex>{`D = \\{(x_i, y_i)\\}; i = 1, 2, ..., N`}</Tex>
+                    </Centered>
+                </p>
+                <p>
+                    Our performance metric is a function of the difference between the model output
+                    and the data:
+                    <Centered>
+                        <Tex>{`Loss_{perf}(f, x, y) = Loss_{perf}(f(x) - y)`}</Tex>
+                    </Centered>
+                    <br />
+                    If we stop here, our model would try to fit the training data as closely as
+                    possible (it will overfit the data).
+                </p>
+                <p>
+                    <b>
+                        We want our model to fit the data, while still being as simple as possible
+                        (i.e. the principle of Occam's Razor)
+                    </b>{' '}
+                    so we add a regularization term to our loss function that is itself a function
+                    of the coefficients of the model, so the training procedure allows us to find
+                    coefficients that are as low as possible.
+                </p>
+                <p>
+                    <Centered>
+                        <Tex>{`Reg(f) = (a_3)^2 + (a_4)^2 + (a_5)^2 + ... `}</Tex>
+                    </Centered>
+                </p>
+
+                <Centered>
+                    <Tex>{`Loss(f, x, y) = Loss_{perf}(f, x, y) + Reg(f)`}</Tex>
+                </Centered>
+                <br />
+
+                <Centered>
+                    <b>Effect of Regularization on Model Behavior</b>
+                </Centered>
+                <CenteredImg src={overfitting} height={340} />
             </div>
 
             <br />
@@ -603,7 +741,10 @@ export default () => (
                         </Centered>
                     </b>
                 </p>
+
+                <CenteredImg src={augmentation} height={260} />
             </div>
+
             <br />
 
             <div id="parameters-and-hyperparameters">
@@ -669,6 +810,8 @@ export default () => (
                     task.
                 </p>
             </div>
+            <CenteredImg src={validation_loop} height={200} />
+
             <br />
 
             <div id="k-fold">
