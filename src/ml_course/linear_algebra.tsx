@@ -1,7 +1,9 @@
 import {PadLeft2perc, PadRight8perc} from '../styled';
 import ListOfLinks from '../components/ListOfLinks';
 import Tex from '@matejmazur/react-katex';
-import {Centered} from '../styled';
+import {Centered, NoMarginH4, NoMarginH3, Caption} from '../styled';
+import {ReactNode} from 'react';
+
 const columnVector = (
     <Centered>
         <Tex>{'\\left[ {\\begin{array}{c} x_1 \\\\ x_2 \\\\ x_3 \\end{array}} \\right]'}</Tex>
@@ -28,6 +30,11 @@ const matrix23 = (
         }
     </Tex>
 );
+const Ctex = ({children}: {children: ReactNode}) => (
+    <Centered>
+        <Tex>{children}</Tex>
+    </Centered>
+);
 
 export default () => (
     <PadLeft2perc>
@@ -37,6 +44,7 @@ export default () => (
             <ListOfLinks
                 lcs={[
                     {link: 'what-is-linear-algebra', children: 'What Is Linear Algebra?'},
+                    {link: 'why-linear-algebra', children: 'Why Linear Algebra?'},
                     {link: 'vectors', children: 'Vectors'},
                     {link: 'matrices', children: 'Matrices'},
                     {link: 'vector-spaces', children: 'Vector Spaces'},
@@ -54,13 +62,20 @@ export default () => (
                 ]}
             />
 
-            <div id="intro">
-                <h3>What Is Linear Algebra?</h3>
+            <div id="what-is-linear-algebra">
+                <NoMarginH3>What Is Linear Algebra?</NoMarginH3>
                 <p>
                     Linear algebra is the branch of mathematics that deals with vectors, matrices,
-                    vector spaces, and linear transforms. It provides a convenient notation and
-                    formalism for describing many mathematical operations over multiple numbers at
-                    the same time.
+                    vector spaces, and linear transforms.
+                </p>
+            </div>
+
+            <div id="why-linear-algebra">
+                <NoMarginH3>Why Linear Algebra?</NoMarginH3>
+                <p>
+                    In data driven modeling, we often want to work on multiple datapoints at the
+                    same time, in the same way. Linear algebra provides us with a convenient and
+                    concise notation for describing this kind of math.
                 </p>
             </div>
             <div id="vectors">
@@ -83,23 +98,56 @@ export default () => (
             <div id="matrices">
                 <h3>Matrices</h3>
                 <p>
-                    A matrix is a list of vectors, (i.e. a 2 dimensional array). We commonly refer
-                    to a matrix by its dimensions, which we always list as "(# of rows) x (# of
-                    columns)".
+                    A matrix is a list of vectors (i.e. a 2 dimensional array). We commonly refer to
+                    a matrix by its dimensions, which we write as NxM (pronounced "N by M"), where N
+                    is the number of rows and M is the number of columns.
                 </p>
-                <p>For example:</p>
-                <Centered>{matrix32}</Centered>
-                <Centered>
-                    <p>A 3x2 matrix</p>
-                </Centered>
+                <p>For example, a 2x3 matrix:</p>
                 <Centered>{matrix23}</Centered>
 
-                <Centered>
-                    <p>A 2x3 matrix</p>
-                </Centered>
+                <p>A 3x2 matrix:</p>
+                <Centered>{matrix32}</Centered>
+                <p>
+                    Notice that the subscripts of each entry in the matrix are also in row, column
+                    order.
+                </p>
+
+                <p>
+                    It turns out that vectors are a special case of matrices. Row vectors are 1xN
+                    matrices and column vectors are Nx1 matrices.
+                </p>
             </div>
             <div id="vector-spaces">
                 <h3>Vector Spaces</h3>
+
+                <p>
+                    A vector space is a specific set of vectors. Before we can talk about vector
+                    spaces, we need to talk about some basic sets.{' '}
+                </p>
+                <p>
+                    The set of counting numbers is written as <Tex>{`\\mathbf{N}`}</Tex>:
+                    <Centered>
+                        <Tex>{`\\mathbf{N} = \\{1, 2, 3\\}`}</Tex>
+                    </Centered>
+                </p>
+
+                <p>
+                    {' '}
+                    First we'll give some examples, and then get into properties of a vector space.
+                    In the previous lecture, "The Big Picture", we gave the example of the
+                    polynomial function. The dataset that we used to train that function was a set
+                    of points in the x-y plane:
+                </p>
+                <Centered>
+                    <Tex>{`D = \\{(x_i, y_i)\\}; i = 1, 2, ..., N`}</Tex>
+                </Centered>
+                <p>
+                    Equivalently, we can write each datapoint as a vector in{' '}
+                    <Tex>{`\\Reals^2`}</Tex> ("R two"):
+                    <Centered>
+                        <Tex>{`D = \\{\\mathbb{x}_i\\}; x \\epsilon \\Reals^2; i = 1, 2, ..., N`}</Tex>
+                    </Centered>
+                </p>
             </div>
 
             <div id="inner-product">

@@ -2,9 +2,11 @@ import './app.css';
 import {Tabs} from 'antd';
 import type {TabsProps} from 'antd';
 import NavBar from './components/navBar';
+import {Centered} from './styled';
 
 // import LessonNeuralNetworks from './dl_course/neural_networks';
 
+/*
 const lessons: TabsProps['items'] = [
     {
         label: 'Neural Networks',
@@ -52,5 +54,15 @@ export default () => (
     <>
         <NavBar activeTabKey="deep-learning-course" />
         <Tabs defaultActiveKey="1" tabPosition="left" items={lessons} />
+    </>
+);
+*/
+
+export default () => (
+    <>
+        <NavBar activeTabKey="deep-learning-course" />
+        <Centered>
+            <h1>Coming Soon!</h1>
+        </Centered>
     </>
 );

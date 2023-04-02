@@ -4,10 +4,11 @@ import {Tabs} from 'antd';
 import type {TabsProps} from 'antd';
 import {Row, Col} from 'antd';
 import {ArrowLeftOutlined, ArrowRightOutlined} from '@ant-design/icons';
-import {StyledButton as Button, PadRight8perc} from './styled';
+import {StyledButton as Button, PadRight8perc, Centered} from './styled';
 import {scrollToTop} from './navigationHelpers';
 import NavBar from './components/navBar';
 
+/*
 // export default ({setActiveTab}: {setActiveTab: (key: string) => void}) => {
 export default () => {
     const lessons: TabsProps['items'] = [
@@ -110,3 +111,14 @@ export default () => {
         </>
     );
 };
+
+*/
+
+export default () => (
+    <>
+        <NavBar activeTabKey="ml-ops-course" />
+        <Centered>
+            <h1>Coming Soon!</h1>
+        </Centered>
+    </>
+);

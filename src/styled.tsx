@@ -58,3 +58,16 @@ export const NoMarginH4 = styled.h4`
 export const StyledButton = styled(Button)`
     background: #FAFAFA;
 `;
+
+export const Caption = styled.p`
+    display: flex;
+    flex-direction: column;
+    align-items:center; 
+    font-weight: bold;
+`;
+
+
+
+
+
+

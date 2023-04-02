@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 import '../app.css';
 import {
     NoMarginP,
@@ -22,8 +23,51 @@ import augmentation from './images/augmentation.PNG';
 import validation_loop from './images/validation_loop.PNG';
 import Tex from '@matejmazur/react-katex';
 import rl_agent_environment from './images/rl_agent_environment_interface2.PNG';
+import CollapsibleSection from '../components/collapsibleSection';
+import {ReactNode} from 'react';
+import {Tooltip} from 'antd';
+import {SetTooltip} from '../components/mathToolTips';
 
-// export default ({setActiveTab}: {setActiveTab: (key: string) => void}) => (
+const WholeNumberTooltip = ({children}: {children: ReactNode}) => {
+    const content = (
+        <div>
+            <p>
+                <Tex>{`k \\epsilon \\N `}</Tex> ("K an element of the natural numbers") means that k
+                is in the set of all natural numbers. A natural number is a counting number.
+            </p>
+            <p>Examples of whole numbers include 1, 2, 3, and 1234.</p>
+        </div>
+    );
+
+    return (
+        <Tooltip title={content} placement="topLeft">
+            <div style={{color: 'green'}}>{children}</div>
+        </Tooltip>
+    );
+};
+
+const IntegerTooltip = ({children}: {children: ReactNode}) => {
+    const content = (
+        <div>
+            <p>
+                <Tex>{`k \\epsilon \\Z `}</Tex> ("K an element of the integers") means that k is in
+                the set of all integers.
+            </p>
+            <p>
+                An integer is a <WholeNumberTooltip>whole number</WholeNumberTooltip> that can be
+                positive, negative, or zero.
+            </p>
+            <p>Examples of integers include -3, 0, 7, and 1234.</p>
+        </div>
+    );
+
+    return (
+        <Tooltip title={content} placement="topLeft">
+            <div style={{color: 'blue'}}>{children}</div>
+        </Tooltip>
+    );
+};
+
 export default () => (
     <PadLeft2perc>
         <PadRight8perc>
@@ -71,6 +115,12 @@ export default () => (
                 </li>
 
                 <li>
+                    <Link to="iteration-batch-epoch" smooth={true}>
+                        Iterations, Batches, Epochs
+                    </Link>
+                </li>
+
+                <li>
                     <Link to="generalization" smooth={true}>
                         Generalization
                     </Link>
@@ -90,7 +140,19 @@ export default () => (
 
                 <li>
                     <Link to="learning-curves" smooth={true}>
-                        Learning Curves, Underfitting, Overfitting, Bias-Variance Tradeoff
+                        Learning Curves
+                    </Link>
+                </li>
+
+                <li>
+                    <Link to="underfitting-overfitting" smooth={true}>
+                        Underfitting, Overfitting, Bias-Variance Tradeoff
+                    </Link>
+                </li>
+
+                <li>
+                    <Link to="regularization" smooth={true}>
+                        Regularization
                     </Link>
                 </li>
 
@@ -363,7 +425,8 @@ export default () => (
                     channel (with respect to the data), the better the performance metric should be.
                     There are a couple of mathematical constraints that we have to place on
                     performance measures that we use during training. In certain contexts, we call
-                    these performance metrics "loss functions" or "objective functions".
+                    these performance metrics <b>"loss functions"</b> or{' '}
+                    <b>"objective functions"</b>.
                 </p>
                 <p>
                     We train the model by having it experience (or "see") our data. In certain
@@ -460,9 +523,10 @@ export default () => (
             <div id="iteration-batch-epoch">
                 <NoMarginH3>Iterations, Batches, Epochs</NoMarginH3>
                 <p>
-                    A single training iteration means that the model has had one experience. That
-                    experience might be based on a single datapoint or a batch of datapoints (a
-                    batch refers to multiple datapoints, but less than the whole dataset).
+                    A single training iteration (a.k.a. a "step") means that the model has had one
+                    experience. That experience might be based on a single datapoint or a batch of
+                    datapoints (a batch refers to multiple datapoints, but less than the whole
+                    dataset).
                 </p>
                 <p>
                     The model experiences an epoch of training every time it iterates through the
@@ -595,16 +659,14 @@ export default () => (
 
                     <CenteredImg src={learning_curve_accuracy} height={340} />
                     <Centered>
-                        As training continues, the accuracy curve ascends. Eventually testing accuracy 
-                        stops improving.
+                        As training continues, the accuracy curve ascends. Eventually testing
+                        accuracy stops improving.
                     </Centered>
                 </p>
             </div>
 
             <div id="underfitting-overfitting">
-                <NoMarginH3>
-                    Learning Curves, Underfitting, Overfitting, Bias-Variance Tradeoff
-                </NoMarginH3>
+                <NoMarginH3>Underfitting, Overfitting, Bias-Variance Tradeoff</NoMarginH3>
                 <p>
                     Underfitting occurs when a model is too simple to capture the complexity of the
                     data and performs poorly on both the training and testing data. This can be
@@ -642,64 +704,88 @@ export default () => (
             <br />
             <div id="regularization">
                 <NoMarginH3>Regularization</NoMarginH3>
-                <p>
-                    Regularization is how we shrink the generalization gap. We add a regularization
-                    term to the objective function, so that the objective function depends on both
-                    the performance of the model with respect to the data, and the value of the
-                    model parameters.
-                </p>
+                <p>Regularization is how we shrink the generalization gap.</p>
 
-                <p>
-                    For example, our model is the polynomial curve:
-                    <Centered>
-                        <Tex>{`f(x) = a_0x^0 + a_1x^1 + a_2x^2 + a_3x^3 + a_4x^4 + ... `}</Tex>
-                    </Centered>
-                </p>
-                <p>
-                    The model parameters are the values of a:
-                    <Centered>
-                        <Tex>{`a_0, a_1, a_2, a_3, a_4, ... `}</Tex>
-                    </Centered>
-                </p>
+                <CollapsibleSection title="Show me the math!">
+                    <p>
+                        We add a regularization term to the performance metric, so that the{' '}
+                        <b>
+                            performance metric depends on both the performance of the model with
+                            respect to the data, and the value of the model parameters.
+                        </b>
+                    </p>
+                    <p>We will now illustrate this concept with a supervised learning example.</p>
 
-                <p>
-                    Our data is a set of points on the x, y plane. We have N total datapoints:
-                    <Centered>
-                        <Tex>{`D = \\{(x_i, y_i)\\}; i = 1, 2, ..., N`}</Tex>
-                    </Centered>
-                </p>
-                <p>
-                    Our performance metric is a function of the difference between the model output
-                    and the data:
-                    <Centered>
-                        <Tex>{`Loss_{perf}(f, x, y) = Loss_{perf}(f(x) - y)`}</Tex>
-                    </Centered>
-                    <br />
-                    If we stop here, our model would try to fit the training data as closely as
-                    possible (it will overfit the data).
-                </p>
-                <p>
-                    <b>
-                        We want our model to fit the data, while still being as simple as possible
-                        (i.e. the principle of Occam's Razor)
-                    </b>{' '}
-                    so we add a regularization term to our loss function that is itself a function
-                    of the coefficients of the model, so the training procedure allows us to find
-                    coefficients that are as low as possible.
-                </p>
-                <p>
-                    <Centered>
-                        <Tex>{`Reg(f) = (a_3)^2 + (a_4)^2 + (a_5)^2 + ... `}</Tex>
-                    </Centered>
-                </p>
+                    <p>
+                        <b>We introduce our first model, the polynomial function:</b>
+                        <Centered>
+                            <Tex>{`f(x) = a_0x^0 + a_1x^1 + a_2x^2 + a_3x^3 + a_4x^4 + ... + a_kx^k;`}</Tex>
 
-                <Centered>
-                    <Tex>{`Loss(f, x, y) = Loss_{perf}(f, x, y) + Reg(f)`}</Tex>
-                </Centered>
+                            <SetTooltip>
+                                <Tex>{`k \\epsilon\\N `}</Tex>
+                            </SetTooltip>
+                        </Centered>
+                    </p>
+                    <p>
+                        The model parameters are the values of a (and each value is a real number):
+                        <Centered>
+                            <Tex>{`a_0, a_1, a_2, a_3, a_4, ..., a_k; a \\epsilon \\Reals `}</Tex>
+                        </Centered>
+                    </p>
+
+                    <p>
+                        Our data is a set of points on the (x, y) plane. The x values represent the
+                        input, and the y values represent the output. We have n total datapoints:
+                        <Centered>
+                            <Tex>{`D = \\{(x_i, y_i)\\}; i = 1, 2, ..., n`}</Tex>
+                        </Centered>
+                    </p>
+                    <p>
+                        Our performance metric is a function that we'll call <Tex>{`J_{perf}`}</Tex>
+                        . It is a function of the difference between the model output (
+                        <Tex>{`f(x_i)`}</Tex>) and the label (<Tex>{`y_i`}</Tex>), summed across all
+                        datapoints in our dataset:
+                        <Centered>
+                            <Tex>{`Loss_{perf}(f, D) = \\displaystyle\\sum_{i=1}^n Loss_{perf}(f(x_i) - y_i)`}</Tex>
+                        </Centered>
+                        The experience we show our model results in minimizing this loss function.
+                        (We won't get into the details on experience for this example).
+                        <br />
+                        If we stop here, our model would try to fit the training data as closely as
+                        possible (it will overfit the data).
+                    </p>
+                    <p>
+                        <b>
+                            We want our model to fit the data, while still being as simple as
+                            possible (i.e. the principle of Occam's Razor)
+                        </b>{' '}
+                        so we introduce a regularization term to our loss function that is itself a
+                        function of the coefficients of the model, so the training procedure allows
+                        us to find coefficients that are as low as possible. Here we choose a
+                        function that applies to the higher order terms of the polynomial:
+                    </p>
+                    <p>
+                        <Centered>
+                            <Tex>{`Reg(f) = (a_3)^2 + (a_4)^2 + (a_5)^2 + ... + (a_k)^2 `}</Tex>
+                        </Centered>
+                    </p>
+                    <p>
+                        This gives us our final loss function:
+                        <Centered>
+                            <Tex>{`Loss(f, D) = (1-\\beta)Loss_{perf}(f, D) + \\beta Reg(f); 0\\le\\beta\\le1`}</Tex>
+                        </Centered>
+                        <br />
+                        By setting a value for the parameter <Tex>\beta</Tex> we can tradeoff how
+                        well we fit to the training data vs how well we generalize. If we set{' '}
+                        <Tex>{`\\beta`}</Tex> to 0, then we only care about fitting the data. If we
+                        set <Tex>{`\\beta`}</Tex> to 1, then we only care about having a simple
+                        model.
+                    </p>
+                </CollapsibleSection>
                 <br />
 
                 <Centered>
-                    <b>Effect of Regularization on Model Behavior</b>
+                    <b>Effect of Regularization on Polynomial Model Behavior</b>
                 </Centered>
                 <CenteredImg src={overfitting} height={340} />
             </div>
@@ -734,15 +820,17 @@ export default () => (
                     training".
                 </p>
                 <p>
-                    <b>
-                        <Centered>
-                            If you add a kind of noise to your training data, the model becomes
-                            robust to that kind of noise!
-                        </Centered>
-                    </b>
+                    <Centered>
+                        <b>diagram of data augmentation for supervised learning</b>
+                    </Centered>
+                    <CenteredImg src={augmentation} height={260} />
+                    <Centered>
+                        <b>
+                            If you add a specific kind of noise to your training data, the model
+                            becomes robust to that kind of noise!
+                        </b>
+                    </Centered>
                 </p>
-
-                <CenteredImg src={augmentation} height={260} />
             </div>
 
             <br />
@@ -765,8 +853,14 @@ export default () => (
                 </p>
                 <p>
                     We will discuss the parameters and hyperparameters of each model as we introduce
-                    it.
+                    it.{' '}
+                    <b>
+                        {' '}
+                        In the polynomial model in the regularization example, the number of terms
+                        to include is a hyperparameter. <Tex>\beta</Tex> is also a hyperparameter.
+                    </b>
                 </p>
+
                 <p>
                     The choice of hyperparameters can have a significant impact on the performance
                     of a model. Choosing the wrong hyperparameters can result in a model that is
@@ -808,9 +902,12 @@ export default () => (
                     and test sets, respectively. However, the optimal split may vary depending on
                     the size and complexity of the dataset, as well as the specific machine learning
                     task.
+                    <Centered>
+                        <b>Finding the optimal hyperparameter</b>
+                    </Centered>
                 </p>
+                <CenteredImg src={validation_loop} height={200} />
             </div>
-            <CenteredImg src={validation_loop} height={200} />
 
             <br />
 

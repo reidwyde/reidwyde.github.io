@@ -18,10 +18,9 @@ import LessonRL from './ml_course/reinforcement_learning';
 import LessonNN from './ml_course/neural_networks';
 import {Row, Col} from 'antd';
 import {ArrowLeftOutlined, ArrowRightOutlined} from '@ant-design/icons';
-import {StyledButton as Button, PadRight8perc} from './styled';
+import {StyledButton as Button, PadRight8perc, Centered} from './styled';
 import {scrollToTop} from './navigationHelpers';
 import NavBar from './components/navBar';
-
 
 // export default ({setActiveTab}: {setActiveTab: (key: string) => void}) => {
 export default () => {
@@ -158,6 +157,9 @@ export default () => {
     return (
         <>
             <NavBar activeTabKey="machine-learning-course" />
+            <Centered>
+                <h1>Course Under Construction</h1>
+            </Centered>
 
             <Tabs
                 activeKey={keys[activeIdx]}
