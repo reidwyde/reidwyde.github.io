@@ -29,6 +29,8 @@ jobs:
 
             - name: Build project
               run: npm run build
+              env:
+                  CI: false # Set CI to false
 
             - name: Deploy to GitHub Pages
               uses: peaceiris/actions-gh-pages@v4
