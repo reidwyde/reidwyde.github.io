@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import NavBar from './components/navBar';
 
-import { NoMarginP, PadLeft20px } from './styled';
+import {NoMarginP, PadLeft20px} from './styled';
 
 // . While you're here, why
 //                     not check out my resume, my research, or my free course on machine learning? (No
@@ -26,8 +26,8 @@ const Home = () => {
             <PadLeft20px>
                 <h3>Welcome!</h3>
                 <p>
-                    My name is Reid Wyde. I'm a software developer, machine learning engineer, data
-                    scientist, and published researcher, born and raised in Dallas, Texas.
+                    Hi, My name is Reid Wyde. I'm a software developer, machine learning engineer,
+                    data scientist, and published researcher, born and raised in Dallas, Texas.
                 </p>
                 <p>This website is the home of my professional portfolio.</p>
                 <br />
