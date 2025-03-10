@@ -15,4 +15,5 @@ npm start
 
 Project deployment:
 
-commit to github and monitor github actions
+-   commit main to github
+-   github actions (.github/workflows/deploy.yml) then deploys to the gh-pages branch
