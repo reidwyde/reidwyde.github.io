@@ -1,18 +1,18 @@
 import React from 'react';
 //import logo from './logo.svg';
-import './app.css';
+import './App.css';
 // import {Link} from 'react-router-dom';
-import {Tabs} from 'antd';
-import {useState} from 'react';
-import type {TabsProps} from 'antd';
+import { Tabs } from 'antd';
+import { useState } from 'react';
+import type { TabsProps } from 'antd';
 import Resume from './resume';
 import MLCourse from './ml_course';
 import DLCourse from './dl_course';
 import MLOpsCourse from './ml_ops_course';
 import Home from './home';
 import Research from './research';
-import {Layout} from 'antd';
-import {scrollToTop} from './navigationHelpers';
+import { Layout } from 'antd';
+import { scrollToTop } from './navigationHelpers';
 
 // <Link to="/resume">Resume</Link>
 //

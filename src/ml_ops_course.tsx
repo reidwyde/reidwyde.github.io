@@ -1,11 +1,11 @@
-import {useState} from 'react';
-import './app.css';
-import {Tabs} from 'antd';
-import type {TabsProps} from 'antd';
-import {Row, Col} from 'antd';
-import {ArrowLeftOutlined, ArrowRightOutlined} from '@ant-design/icons';
-import {StyledButton as Button, PadRight8perc, Centered} from './styled';
-import {scrollToTop} from './navigationHelpers';
+import { useState } from 'react';
+import './App.css';
+import { Tabs } from 'antd';
+import type { TabsProps } from 'antd';
+import { Row, Col } from 'antd';
+import { ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons';
+import { StyledButton as Button, PadRight8perc, Centered } from './styled';
+import { scrollToTop } from './navigationHelpers';
 import NavBar from './components/navBar';
 
 /*

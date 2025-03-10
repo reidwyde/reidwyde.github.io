@@ -1,5 +1,5 @@
 /* eslint-disable no-useless-escape */
-import '../app.css';
+import '../App.css';
 import {
     NoMarginP,
     PadLeft2perc,
@@ -9,8 +9,8 @@ import {
     CenteredImg,
     Centered,
 } from '../styled';
-import {Link} from 'react-scroll';
-import {Link as RouteLink} from 'react-router-dom';
+import { Link } from 'react-scroll';
+import { Link as RouteLink } from 'react-router-dom';
 import channel_image from './images/real_channel_vs_in_silico_model.PNG';
 import MlvsHuman from './images/ml_vs_human.PNG';
 import xkcd_extrapolation from './images/xkcd_extrapolation.PNG';
@@ -24,11 +24,11 @@ import validation_loop from './images/validation_loop.PNG';
 import Tex from '@matejmazur/react-katex';
 import rl_agent_environment from './images/rl_agent_environment_interface2.PNG';
 import CollapsibleSection from '../components/collapsibleSection';
-import {ReactNode} from 'react';
-import {Tooltip} from 'antd';
-import {SetTooltip} from '../components/mathToolTips';
+import { ReactNode } from 'react';
+import { Tooltip } from 'antd';
+import { SetTooltip } from '../components/mathToolTips';
 
-const WholeNumberTooltip = ({children}: {children: ReactNode}) => {
+const WholeNumberTooltip = ({ children }: { children: ReactNode }) => {
     const content = (
         <div>
             <p>
@@ -41,12 +41,12 @@ const WholeNumberTooltip = ({children}: {children: ReactNode}) => {
 
     return (
         <Tooltip title={content} placement="topLeft">
-            <div style={{color: 'green'}}>{children}</div>
+            <div style={{ color: 'green' }}>{children}</div>
         </Tooltip>
     );
 };
 
-const IntegerTooltip = ({children}: {children: ReactNode}) => {
+const IntegerTooltip = ({ children }: { children: ReactNode }) => {
     const content = (
         <div>
             <p>
@@ -63,7 +63,7 @@ const IntegerTooltip = ({children}: {children: ReactNode}) => {
 
     return (
         <Tooltip title={content} placement="topLeft">
-            <div style={{color: 'blue'}}>{children}</div>
+            <div style={{ color: 'blue' }}>{children}</div>
         </Tooltip>
     );
 };

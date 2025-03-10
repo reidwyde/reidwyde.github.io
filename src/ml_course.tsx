@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
-import './app.css';
-import {Tabs} from 'antd';
-import type {TabsProps} from 'antd';
+import React, { useState } from 'react';
+import './App.css';
+import { Tabs } from 'antd';
+import type { TabsProps } from 'antd';
 import LessonTheBigPicture from './ml_course/the_big_picture';
 import LessonLinearAlgebra from './ml_course/linear_algebra';
 import LessonGradientDescent from './ml_course/gradient_descent';
@@ -16,10 +16,10 @@ import LessonGraphLearning from './ml_course/graph_learning';
 import LessonGA from './ml_course/genetic_algorithms';
 import LessonRL from './ml_course/reinforcement_learning';
 import LessonNN from './ml_course/neural_networks';
-import {Row, Col} from 'antd';
-import {ArrowLeftOutlined, ArrowRightOutlined} from '@ant-design/icons';
-import {StyledButton as Button, PadRight8perc, Centered} from './styled';
-import {scrollToTop} from './navigationHelpers';
+import { Row, Col } from 'antd';
+import { ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons';
+import { StyledButton as Button, PadRight8perc, Centered } from './styled';
+import { scrollToTop } from './navigationHelpers';
 import NavBar from './components/navBar';
 
 // export default ({setActiveTab}: {setActiveTab: (key: string) => void}) => {
@@ -147,7 +147,7 @@ export default () => {
                 <Col span={12}>
                     <BackwardButton />
                 </Col>
-                <Col span={12} style={{textAlign: 'right'}}>
+                <Col span={12} style={{ textAlign: 'right' }}>
                     <ForwardButton />
                 </Col>
             </Row>
@@ -165,7 +165,7 @@ export default () => {
                 activeKey={keys[activeIdx]}
                 onChange={setActiveIdxWithKey}
                 tabPosition="left"
-                style={{height: 1000}}
+                style={{ height: 1000 }}
                 items={lessons.map((lesson) => ({
                     ...lesson,
                     forceRender: true,

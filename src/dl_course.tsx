@@ -1,8 +1,8 @@
-import './app.css';
-import {Tabs} from 'antd';
-import type {TabsProps} from 'antd';
+import './App.css';
+import { Tabs } from 'antd';
+import type { TabsProps } from 'antd';
 import NavBar from './components/navBar';
-import {Centered} from './styled';
+import { Centered } from './styled';
 
 // import LessonNeuralNetworks from './dl_course/neural_networks';
 

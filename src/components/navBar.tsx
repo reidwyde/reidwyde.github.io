@@ -1,11 +1,11 @@
 import React from 'react';
-import '../app.css';
-import {Tabs} from 'antd';
-import type {TabsProps} from 'antd';
-import {scrollToTop} from '../navigationHelpers';
-import {useNavigate} from 'react-router-dom';
+import '../App.css';
+import { Tabs } from 'antd';
+import type { TabsProps } from 'antd';
+import { scrollToTop } from '../navigationHelpers';
+import { useNavigate } from 'react-router-dom';
 
-export default ({activeTabKey}: {activeTabKey: string}) => {
+export default ({ activeTabKey }: { activeTabKey: string }) => {
     const navigate = useNavigate();
 
     const onTabClick = (key: string) => {
@@ -34,6 +34,12 @@ export default ({activeTabKey}: {activeTabKey: string}) => {
         },
 
         {
+            key: 'resources',
+            label: `Resources`,
+        },
+
+        /*
+        {
             key: 'machine-learning-course',
             label: `Machine Learning Course`,
             // children: <MLCourse />,
@@ -48,6 +54,7 @@ export default ({activeTabKey}: {activeTabKey: string}) => {
             label: `ML Ops Course`,
             // children: <MLOpsCourse />,
         },
+        */
     ];
 
     return (

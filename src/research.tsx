@@ -1,5 +1,5 @@
-import './app.css';
-import {PadLeft20px, NoMarginH3, NoMarginH4} from './styled';
+import './App.css';
+import { PadLeft20px, NoMarginH3, NoMarginH4 } from './styled';
 import NavBar from './components/navBar';
 
 // <Link to="/resume">Resume</Link>

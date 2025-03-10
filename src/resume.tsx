@@ -110,14 +110,31 @@ Numpy, Pandas,
                         <br />
                         <h4>Work Experience</h4>
                         <WorkExperience
-                            title="Full Stack Software Development Engineer"
-                            company="Stealth Mode Startup"
-                            timePeriod="2/2022 – Present"
+                            title="Data Scientist"
+                            company="Cognovi Labs"
+                            timePeriod="9/2024 - Present"
                             achievements={[
+                                'Researched and implemented deepfake audio detection models using Librosa and XGBoost',
+                                'Generated deepfake audio dataset to enhance model robustness using ElevenLabs API',
+                                'Analyzed emotion propagation in large-scale social media networks using NLP and NetworkX',
+                                'Developed interactive network visualization app using React, D3, and Dash',
+                            ]}
+                        />
+                        <WorkExperience
+                            title="Lead Developer, Full Stack Software Engineer"
+                            company="Kyrtas"
+                            timePeriod="2/2022 – 9/2024"
+                            achievements={[
+                                'Trained high performance financial analysis ML models using Python and Cython',
+                                'Containerized and deployed ML models for real time use with Docker and Kubernetes',
+                                'Monitored ML model performance with K9s, Prometheus, and Grafana',
+                                'Integrated CI/CD pipeline using Harbor, ArgoCD, and Gitlab CI/CD',
+                                'Managed ML model data storage with PyStore',
+                                'Reviewed, collaborated on, and published code changes using Gitlab, NPM, PyPi, and Poetry',
+                                'Implemented high speed, multi-account trading client using C++ and Rithmic API',
+                                'Integrated application with back end databases using GraphQL, PostgreSQL and Apollo',
                                 'Built cross-platform front end UI for securities purchasing application using ReactJS and TypeScript',
                                 'Containerized application for scalable memory and storage using Docker and Kubernetes',
-
-                                'Integrated application with back end databases using GraphQL, PostgreSQL and Apollo',
                                 'Added permission configured multimedia data storage to application using Minio',
                                 'Published contributions to internal tooling libraries using PyPi and Poetry ',
                                 'Implemented statistical analysis of stock time series data in Python',
