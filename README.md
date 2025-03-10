@@ -4,10 +4,8 @@ entry point
 src/index.tsx
 
 TODO:
-update resume
-get resources page going
-delete other branches
 clean up repo, remove dead files
+get resources page going
 
 Project testing:
 
