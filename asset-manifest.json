@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.097dccd4.css",
-    "main.js": "/static/js/main.c411228d.js",
+    "main.js": "/static/js/main.904a28ec.js",
     "static/media/ml_vs_human.PNG": "/static/media/ml_vs_human.3a903376bbdece90854d.PNG",
     "static/media/learning_curve_accuracy.PNG": "/static/media/learning_curve_accuracy.65aba42239daebe32b5a.PNG",
     "static/media/overfitting.PNG": "/static/media/overfitting.96af57e3727315a94137.PNG",
@@ -16,10 +16,10 @@
     "static/media/real_channel_vs_in_silico_model.PNG": "/static/media/real_channel_vs_in_silico_model.e7bc497252cee9fcb6d1.PNG",
     "index.html": "/index.html",
     "main.097dccd4.css.map": "/static/css/main.097dccd4.css.map",
-    "main.c411228d.js.map": "/static/js/main.c411228d.js.map"
+    "main.904a28ec.js.map": "/static/js/main.904a28ec.js.map"
   },
   "entrypoints": [
     "static/css/main.097dccd4.css",
-    "static/js/main.c411228d.js"
+    "static/js/main.904a28ec.js"
   ]
 }
