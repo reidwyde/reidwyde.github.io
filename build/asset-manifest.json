@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.097dccd4.css",
+    "main.js": "/static/js/main.c411228d.js",
+    "static/media/ml_vs_human.PNG": "/static/media/ml_vs_human.3a903376bbdece90854d.PNG",
+    "static/media/learning_curve_accuracy.PNG": "/static/media/learning_curve_accuracy.65aba42239daebe32b5a.PNG",
+    "static/media/overfitting.PNG": "/static/media/overfitting.96af57e3727315a94137.PNG",
+    "static/media/xkcd_extrapolation.PNG": "/static/media/xkcd_extrapolation.2b7c550f89f978fabb0e.PNG",
+    "static/media/Wyde_Resume_Spring_2023.pdf": "/static/media/Wyde_Resume_Spring_2023.555d9cf44d468e5eeb57.pdf",
+    "static/media/high_bias_vs_high_variance_learning_curves.PNG": "/static/media/high_bias_vs_high_variance_learning_curves.18426b523cece7edd4a8.PNG",
+    "static/media/train_vs_test_loss_curve.PNG": "/static/media/train_vs_test_loss_curve.95636782abc6bdc0b279.PNG",
+    "static/media/bias_variance_tradeoff_regimes.PNG": "/static/media/bias_variance_tradeoff_regimes.b795fd1b9504d7977095.PNG",
+    "static/media/rl_agent_environment_interface2.PNG": "/static/media/rl_agent_environment_interface2.3449f75e393b436995f9.PNG",
+    "static/media/validation_loop.PNG": "/static/media/validation_loop.f956651381ab9bd07bd1.PNG",
+    "static/media/augmentation.PNG": "/static/media/augmentation.ca3ff33f3a825abc75f6.PNG",
+    "static/media/real_channel_vs_in_silico_model.PNG": "/static/media/real_channel_vs_in_silico_model.e7bc497252cee9fcb6d1.PNG",
+    "index.html": "/index.html",
+    "main.097dccd4.css.map": "/static/css/main.097dccd4.css.map",
+    "main.c411228d.js.map": "/static/js/main.c411228d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.097dccd4.css",
+    "static/js/main.c411228d.js"
+  ]
+}
