@@ -6,9 +6,9 @@ on:
             - main
 
 permissions:
-    contents: read
-    pages: write
-    id-token: write
+    contents: write # Allow write access to the repository contents
+    pages: write # Allow write access to GitHub Pages
+    id-token: write # Required for generating the GitHub token
 
 jobs:
     build:
