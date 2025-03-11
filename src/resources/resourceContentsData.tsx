@@ -1,6 +1,6 @@
 import React from 'react';
 
-const YouTubeEmbed = ({ videoUrl }: { videoUrl: string }) => {
+const YouTubeEmbed = ({videoUrl}: {videoUrl: string}) => {
     const videoId = videoUrl.replace('https://www.youtube.com/watch?v=', '');
 
     return (
@@ -107,12 +107,12 @@ export const resourceContentsData = [
                 <br />
                 <br />
                 <a href="https://docs.aws.amazon.com/eks/latest/userguide/what-is-eks.html">
-                    Amazon's EKS Guide
+                    Amazon EKS Guide
                 </a>
                 <br />
                 <br />
                 <a href="https://docs.aws.amazon.com/eks/latest/userguide/ml-get-started.html">
-                    Amazon's ML on EKS Guide
+                    Amazon ML on EKS Guide
                 </a>
             </>
         ),
