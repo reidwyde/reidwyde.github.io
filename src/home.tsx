@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import NavBar from './components/navBar';
 
-import { NoMarginP, PadLeft20px } from './styled';
+import {NoMarginP, PadLeft20px} from './styled';
 
 // . While you're here, why
 //                     not check out my resume, my research, or my free course on machine learning? (No
@@ -46,8 +46,14 @@ const Home = () => {
                 <NoMarginP>Best,</NoMarginP>
                 <NoMarginP>Reid Wyde</NoMarginP>
                 <NoMarginP>214-870-4733</NoMarginP>
-                <NoMarginP>reidwyde@gmail.com</NoMarginP>
-                <NoMarginP>https://www.linkedin.com/in/reidwyde</NoMarginP>
+                <NoMarginP>
+                    <a href="mailto:reidwyde@gmail.com">reidwyde@gmail.com</a>
+                </NoMarginP>
+                <NoMarginP>
+                    <a href="https://www.linkedin.com/in/reidwyde">
+                        https://www.linkedin.com/in/reidwyde
+                    </a>
+                </NoMarginP>
             </PadLeft20px>
         </>
     );

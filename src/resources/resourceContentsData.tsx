@@ -1,8 +1,5 @@
 import React from 'react';
 
-const eks_videoUrl = 'https://www.youtube.com/watch?v=p6xDCz00TxU';
-// const eks_videoId = 'p6xDCz00TxU'; // Extract the video ID from the URL
-
 const YouTubeEmbed = ({ videoUrl }: { videoUrl: string }) => {
     const videoId = videoUrl.replace('https://www.youtube.com/watch?v=', '');
 
@@ -30,6 +27,7 @@ export const resourceContentsData = [
         name: 'ChatGPT',
         tags: ['AI', 'Natural Language Processing', 'Productivity'],
         body: 'TODO',
+        lastModified: null,
     },
     {
         label: 'Python',
@@ -37,6 +35,7 @@ export const resourceContentsData = [
         name: 'Python',
         tags: ['Programming Languages'],
         body: 'TODO',
+        lastModified: null,
     },
     {
         label: 'TypeScript',
@@ -44,6 +43,7 @@ export const resourceContentsData = [
         name: 'TypeScript',
         tags: ['Programming Languages', 'Frontend', 'JavaScript'],
         body: 'TODO',
+        lastModified: null,
     },
     {
         label: 'SQL',
@@ -51,6 +51,7 @@ export const resourceContentsData = [
         name: 'SQL',
         tags: ['Programming Languages', 'Databases'],
         body: 'TODO',
+        lastModified: null,
     },
     {
         label: 'Docker',
@@ -58,6 +59,7 @@ export const resourceContentsData = [
         name: 'Docker',
         tags: ['Containerization', 'Cloud', 'DevOps'],
         body: 'TODO',
+        lastModified: null,
     },
     {
         label: 'Kubernetes',
@@ -65,6 +67,7 @@ export const resourceContentsData = [
         name: 'Kubernetes',
         tags: ['DevOps', 'Cloud', 'Kubernetes'],
         body: 'TODO',
+        lastModified: null,
     },
     {
         label: 'Harbor',
@@ -72,6 +75,7 @@ export const resourceContentsData = [
         name: 'Harbor',
         tags: ['DevOps', 'Containerization'],
         body: 'TODO',
+        lastModified: null,
     },
     {
         label: 'AWS EC2',
@@ -79,6 +83,7 @@ export const resourceContentsData = [
         name: 'AWS EC2',
         tags: ['AWS', 'Cloud', 'DevOps'],
         body: 'TODO',
+        lastModified: null,
     },
     {
         label: 'AWS ECR',
@@ -86,15 +91,29 @@ export const resourceContentsData = [
         name: 'AWS ECR',
         tags: ['AWS', 'Cloud', 'Container Registry', 'DevOps'],
         body: 'TODO',
+        lastModified: null,
     },
     {
         label: 'AWS EKS',
         key: 'aws_eks',
-        name: 'AWS EKS',
+        name: 'Amazon Elastic Kubernetes Service',
         tags: ['AWS', 'Cloud', 'DevOps', 'Kubernetes'],
         body: (
             <>
-                <YouTubeEmbed videoUrl={eks_videoUrl} />
+                <YouTubeEmbed videoUrl={'https://www.youtube.com/watch?v=p6xDCz00TxU'} />
+                <br />
+                <br />
+                <YouTubeEmbed videoUrl={'https://www.youtube.com/watch?v=wyad99QMKtc'} />
+                <br />
+                <br />
+                <a href="https://docs.aws.amazon.com/eks/latest/userguide/what-is-eks.html">
+                    Amazon's EKS Guide
+                </a>
+                <br />
+                <br />
+                <a href="https://docs.aws.amazon.com/eks/latest/userguide/ml-get-started.html">
+                    Amazon's ML on EKS Guide
+                </a>
             </>
         ),
     },
@@ -104,6 +123,7 @@ export const resourceContentsData = [
         name: 'Git',
         tags: ['DevOps', 'Version Control', 'Productivity'],
         body: 'TODO',
+        lastModified: null,
     },
     {
         label: 'Neovim',
@@ -111,6 +131,7 @@ export const resourceContentsData = [
         name: 'Neovim',
         tags: ['Productivity'],
         body: 'TODO',
+        lastModified: null,
     },
     {
         label: 'ReactJS',
@@ -118,6 +139,7 @@ export const resourceContentsData = [
         name: 'ReactJS',
         tags: ['Frontend', 'JavaScript'],
         body: 'TODO',
+        lastModified: null,
     },
     {
         label: 'Ollama',
@@ -125,6 +147,7 @@ export const resourceContentsData = [
         name: 'Ollama',
         tags: ['AI', 'Natural Language Processing', 'Productivity'],
         body: 'TODO',
+        lastModified: null,
     },
     {
         label: 'Aider.chat',
@@ -132,6 +155,7 @@ export const resourceContentsData = [
         name: 'Aider.chat',
         tags: ['AI', 'Productivity'],
         body: 'TODO',
+        lastModified: null,
     },
     {
         label: 'Terraform',
@@ -139,6 +163,7 @@ export const resourceContentsData = [
         name: 'Terraform',
         tags: ['CI/CD', 'DevOps', 'Kubernetes'],
         body: 'TODO',
+        lastModified: null,
     },
     {
         label: 'CDK8s',
@@ -146,6 +171,7 @@ export const resourceContentsData = [
         name: 'CDK8s',
         tags: ['CI/CD', 'DevOps', 'Kubernetes'],
         body: 'TODO',
+        lastModified: null,
     },
     {
         label: 'ArgoCD',
@@ -153,6 +179,7 @@ export const resourceContentsData = [
         name: 'ArgoCD',
         tags: ['CI/CD', 'DevOps', 'Kubernetes'],
         body: 'TODO',
+        lastModified: null,
     },
     {
         label: 'Github Actions',
@@ -160,6 +187,7 @@ export const resourceContentsData = [
         name: 'Github Actions',
         tags: ['CI/CD', 'DevOps'],
         body: 'TODO',
+        lastModified: null,
     },
     {
         label: 'Langchain',
@@ -167,6 +195,7 @@ export const resourceContentsData = [
         name: 'Langchain',
         tags: ['AI', 'Productivity', 'Automation'],
         body: 'TODO',
+        lastModified: null,
     },
     {
         label: 'GraphQL',
@@ -174,6 +203,7 @@ export const resourceContentsData = [
         name: 'GraphQL',
         tags: ['Programming Languages', 'Databases'],
         body: 'TODO',
+        lastModified: null,
     },
     {
         label: 'Apollo',
@@ -181,6 +211,7 @@ export const resourceContentsData = [
         name: 'Apollo',
         tags: ['Frontend', 'JavaScript', 'Databases'],
         body: 'TODO',
+        lastModified: null,
     },
 
     {
@@ -189,6 +220,7 @@ export const resourceContentsData = [
         name: 'Redis',
         tags: ['Databases'],
         body: 'TODO',
+        lastModified: null,
     },
     {
         label: 'RAG',
@@ -196,6 +228,7 @@ export const resourceContentsData = [
         name: 'RAG',
         tags: ['AI', 'Automation'],
         body: 'TODO',
+        lastModified: null,
     },
     {
         label: 'Data Analytics',
@@ -203,6 +236,7 @@ export const resourceContentsData = [
         name: 'Data Analytics',
         tags: ['Analytics'],
         body: 'TODO',
+        lastModified: null,
     },
     {
         label: 'Probabilistic Web Design',
@@ -210,6 +244,7 @@ export const resourceContentsData = [
         name: 'Probabilistic Web Design',
         tags: ['Analytics', 'Frontend', 'Reinforcement Learning'],
         body: 'TODO',
+        lastModified: null,
     },
     {
         label: 'OpenAI API',
@@ -217,5 +252,73 @@ export const resourceContentsData = [
         name: 'OpenAI API',
         tags: ['AI', 'Productivity', 'Automation'],
         body: 'TODO',
+        lastModified: null,
+    },
+
+    {
+        label: 'Grafana',
+        key: 'grafana',
+        name: 'OpenAI API',
+        tags: ['observability'],
+        body: 'TODO',
+        lastModified: null,
+    },
+
+    {
+        label: 'AWS CloudWatch',
+        key: 'aws_cloudwatch',
+        name: 'AWS CloudWatch',
+        tags: ['AWS', 'cloud', 'observability'],
+        body: 'TODO',
+        lastModified: null,
+    },
+    {
+        label: 'Prometheus',
+        key: 'prometheus',
+        name: 'Prometheus',
+        tags: ['observability'],
+        body: 'TODO',
+        lastModified: null,
+    },
+    {
+        label: 'K9s',
+        key: 'k9s',
+        name: 'K9s',
+        tags: ['kubernetes', 'observability'],
+        body: 'TODO',
+        lastModified: null,
+    },
+
+    {
+        label: 'Nginx',
+        key: 'nginx',
+        name: 'Nginx',
+        tags: ['networking'],
+        body: 'TODO',
+        lastModified: null,
+    },
+    {
+        label: 'PySpark',
+        key: 'pyspark',
+        name: 'PySpark',
+        tags: ['Analytics', 'ETL'],
+        body: 'TODO',
+        lastModified: null,
+    },
+    {
+        label: 'Cython',
+        key: 'cython',
+        name: 'cython',
+        tags: ['Programming Languages'],
+        body: 'TODO',
+        lastModified: null,
+    },
+    {
+        label: 'Symbolic Regression',
+        key: 'symbolic_regression',
+        name: 'Symbolic Regression',
+        tags: ['Models'],
+        body: 'TODO',
+        lastModified: null,
     },
 ];
