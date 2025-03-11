@@ -29,14 +29,22 @@ const Home = () => {
                     My name is Reid Wyde. I'm a software developer, machine learning engineer, data
                     scientist, and published researcher, born and raised in Dallas, Texas.
                 </p>
-                <p>This website is the home of my professional portfolio.</p>
+                <p>
+                    This website is where I keep a virtual copy of my resume, and links to resources
+                    for those wanting to learn more about software development, machine learning,
+                    and data science.
+                </p>
+                <br />
+                <p>
+                    If your business needs expert guidance in software development, machine
+                    learning, or data science, I offer consulting services to help you build
+                    efficient, scalable, and intelligent solutions. Feel free to reach out to
+                    discuss how I can assist with your project.
+                </p>
                 <br />
 
-                <p>If you have any questions, feel free to reach out.</p>
-                <br />
-
-                <NoMarginP>Good Luck,</NoMarginP>
-                <NoMarginP>Reid</NoMarginP>
+                <NoMarginP>Best,</NoMarginP>
+                <NoMarginP>Reid Wyde</NoMarginP>
                 <NoMarginP>214-870-4733</NoMarginP>
                 <NoMarginP>reidwyde@gmail.com</NoMarginP>
             </PadLeft20px>
