@@ -47,6 +47,7 @@ const Home = () => {
                 <NoMarginP>Reid Wyde</NoMarginP>
                 <NoMarginP>214-870-4733</NoMarginP>
                 <NoMarginP>reidwyde@gmail.com</NoMarginP>
+                <NoMarginP>https://www.linkedin.com/in/reidwyde</NoMarginP>
             </PadLeft20px>
         </>
     );
