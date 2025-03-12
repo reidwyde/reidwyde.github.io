@@ -8,9 +8,10 @@ export type Resource = {
     tags: string[];
     body: React.ReactNode;
     lastUpdated: null | Date;
+    byline: string;
 };
 
-export const resourcesData = [
+const resourcesData1: Omit<Resource, 'byline'>[] = [
     {
         name: 'ChatGPT',
         label: 'ChatGPT',
@@ -557,306 +558,159 @@ export const resourcesData = [
     },
 ];
 
-// export const resourcesDataWithTags: Resource[] = [
-//     {
-//         label: 'ChatGPT',
-//         key: 'chatgpt',
-//         name: 'ChatGPT',
-//         tags: ['AI', 'Natural Language Processing', 'Productivity'],
-//         body: 'TODO',
-//         lastUpdated: null,
-//     },
-//     {
-//         label: 'Python',
-//         key: 'python',
-//         name: 'Python',
-//         tags: ['Programming Languages'],
-//         body: 'TODO',
-//         lastUpdated: null,
-//     },
-//     {
-//         label: 'TypeScript',
-//         key: 'typescript',
-//         name: 'TypeScript',
-//         tags: ['Programming Languages', 'Frontend', 'JavaScript'],
-//         body: 'TODO',
-//         lastUpdated: null,
-//     },
-//     {
-//         label: 'SQL',
-//         key: 'sql',
-//         name: 'SQL',
-//         tags: ['Programming Languages', 'Databases'],
-//         body: 'TODO',
-//         lastUpdated: null,
-//     },
-//     {
-//         label: 'Docker',
-//         key: 'docker',
-//         name: 'Docker',
-//         tags: ['Containerization', 'Cloud', 'DevOps'],
-//         body: 'TODO',
-//         lastUpdated: null,
-//     },
-//     {
-//         label: 'Kubernetes',
-//         key: 'kubernetes',
-//         name: 'Kubernetes',
-//         tags: ['DevOps', 'Cloud', 'Kubernetes'],
-//         body: 'TODO',
-//         lastUpdated: null,
-//     },
-//     {
-//         label: 'Harbor',
-//         key: 'harbor',
-//         name: 'Harbor',
-//         tags: ['DevOps', 'Containerization'],
-//         body: 'TODO',
-//         lastUpdated: null,
-//     },
-//     {
-//         label: 'AWS EC2',
-//         key: 'aws_ec2',
-//         name: 'AWS EC2',
-//         tags: ['AWS', 'Cloud', 'DevOps'],
-//         body: 'TODO',
-//         lastUpdated: null,
-//     },
-//     {
-//         label: 'AWS ECR',
-//         key: 'aws_ecr',
-//         name: 'AWS ECR',
-//         tags: ['AWS', 'Cloud', 'Container Registry', 'DevOps'],
-//         body: 'TODO',
-//         lastUpdated: null,
-//     },
-//     {
-//         label: 'AWS EKS',
-//         key: 'aws_eks',
-//         name: 'Amazon Elastic Kubernetes Service',
-//         tags: ['AWS', 'Cloud', 'DevOps', 'Kubernetes'],
-//         body: (
-//             <>
-//                 <YouTubeEmbed videoUrl={'https://www.youtube.com/watch?v=p6xDCz00TxU'} />
-//                 <br />
-//                 <br />
-//                 <YouTubeEmbed videoUrl={'https://www.youtube.com/watch?v=wyad99QMKtc'} />
-//                 <br />
-//                 <br />
-//                 <a href="https://docs.aws.amazon.com/eks/latest/userguide/what-is-eks.html">
-//                     Amazon EKS Guide
-//                 </a>
-//                 <br />
-//                 <br />
-//                 <a href="https://docs.aws.amazon.com/eks/latest/userguide/ml-get-started.html">
-//                     Amazon ML on EKS Guide
-//                 </a>
-//             </>
-//         ),
-//         lastUpdated: new Date('3-11-25'),
-//     },
-//     {
-//         label: 'Git',
-//         key: 'git',
-//         name: 'Git',
-//         tags: ['DevOps', 'Version Control', 'Productivity'],
-//         body: 'TODO',
-//         lastUpdated: null,
-//     },
-//     {
-//         label: 'Neovim',
-//         key: 'neovim',
-//         name: 'Neovim',
-//         tags: ['Productivity'],
-//         body: 'TODO',
-//         lastUpdated: null,
-//     },
-//     {
-//         label: 'ReactJS',
-//         key: 'react',
-//         name: 'ReactJS',
-//         tags: ['Frontend', 'JavaScript'],
-//         body: 'TODO',
-//         lastUpdated: null,
-//     },
-//     {
-//         label: 'Ollama',
-//         key: 'ollama',
-//         name: 'Ollama',
-//         tags: ['AI', 'Natural Language Processing', 'Productivity'],
-//         body: 'TODO',
-//         lastUpdated: null,
-//     },
-//     {
-//         label: 'Aider.chat',
-//         key: 'aider_chat',
-//         name: 'Aider.chat',
-//         tags: ['AI', 'Productivity'],
-//         body: 'TODO',
-//         lastUpdated: null,
-//     },
-//     {
-//         label: 'Terraform',
-//         key: 'terraform',
-//         name: 'Terraform',
-//         tags: ['CI/CD', 'DevOps', 'Kubernetes'],
-//         body: 'TODO',
-//         lastUpdated: null,
-//     },
-//     {
-//         label: 'CDK8s',
-//         key: 'cdk8s',
-//         name: 'CDK8s',
-//         tags: ['CI/CD', 'DevOps', 'Kubernetes'],
-//         body: 'TODO',
-//         lastUpdated: null,
-//     },
-//     {
-//         label: 'ArgoCD',
-//         key: 'argo_cd',
-//         name: 'ArgoCD',
-//         tags: ['CI/CD', 'DevOps', 'Kubernetes'],
-//         body: 'TODO',
-//         lastUpdated: null,
-//     },
-//     {
-//         label: 'Github Actions',
-//         key: 'github_actions',
-//         name: 'Github Actions',
-//         tags: ['CI/CD', 'DevOps'],
-//         body: 'TODO',
-//         lastUpdated: null,
-//     },
-//     {
-//         label: 'Langchain',
-//         key: 'langchain',
-//         name: 'Langchain',
-//         tags: ['AI', 'Productivity', 'Automation'],
-//         body: 'TODO',
-//         lastUpdated: null,
-//     },
-//     {
-//         label: 'GraphQL',
-//         key: 'graphql',
-//         name: 'GraphQL',
-//         tags: ['Programming Languages', 'Databases'],
-//         body: 'TODO',
-//         lastUpdated: null,
-//     },
-//     {
-//         label: 'Apollo',
-//         key: 'apollo',
-//         name: 'Apollo',
-//         tags: ['Frontend', 'JavaScript', 'Databases'],
-//         body: 'TODO',
-//         lastUpdated: null,
-//     },
-//
-//     {
-//         label: 'Redis',
-//         key: 'redis',
-//         name: 'Redis',
-//         tags: ['Databases'],
-//         body: 'TODO',
-//         lastUpdated: null,
-//     },
-//     {
-//         label: 'RAG',
-//         key: 'rag',
-//         name: 'RAG',
-//         tags: ['AI', 'Automation'],
-//         body: 'TODO',
-//         lastUpdated: null,
-//     },
-//     {
-//         label: 'Data Analytics',
-//         key: 'data_analytics',
-//         name: 'Data Analytics',
-//         tags: ['Analytics'],
-//         body: 'TODO',
-//         lastUpdated: null,
-//     },
-//     {
-//         label: 'Probabilistic Web Design',
-//         key: 'probabilistic_web_design',
-//         name: 'Probabilistic Web Design',
-//         tags: ['Analytics', 'Frontend', 'Reinforcement Learning'],
-//         body: 'TODO',
-//         lastUpdated: null,
-//     },
-//     {
-//         label: 'OpenAI API',
-//         key: 'openai_api',
-//         name: 'OpenAI API',
-//         tags: ['AI', 'Productivity', 'Automation'],
-//         body: 'TODO',
-//         lastUpdated: null,
-//     },
-//
-//     {
-//         label: 'Grafana',
-//         key: 'grafana',
-//         name: 'OpenAI API',
-//         tags: ['observability'],
-//         body: 'TODO',
-//         lastUpdated: null,
-//     },
-//
-//     {
-//         label: 'AWS CloudWatch',
-//         key: 'aws_cloudwatch',
-//         name: 'AWS CloudWatch',
-//         tags: ['AWS', 'cloud', 'observability'],
-//         body: 'TODO',
-//         lastUpdated: null,
-//     },
-//     {
-//         label: 'Prometheus',
-//         key: 'prometheus',
-//         name: 'Prometheus',
-//         tags: ['observability'],
-//         body: 'TODO',
-//         lastUpdated: null,
-//     },
-//     {
-//         label: 'K9s',
-//         key: 'k9s',
-//         name: 'K9s',
-//         tags: ['kubernetes', 'observability'],
-//         body: 'TODO',
-//         lastUpdated: null,
-//     },
-//
-//     {
-//         label: 'Nginx',
-//         key: 'nginx',
-//         name: 'Nginx',
-//         tags: ['networking'],
-//         body: 'TODO',
-//         lastUpdated: null,
-//     },
-//     {
-//         label: 'PySpark',
-//         key: 'pyspark',
-//         name: 'PySpark',
-//         tags: ['Analytics', 'ETL'],
-//         body: 'TODO',
-//         lastUpdated: null,
-//     },
-//     {
-//         label: 'Cython',
-//         key: 'cython',
-//         name: 'cython',
-//         tags: ['Programming Languages'],
-//         body: 'TODO',
-//         lastUpdated: null,
-//     },
-//     {
-//         label: 'Symbolic Regression',
-//         key: 'symbolic_regression',
-//         name: 'Symbolic Regression',
-//         tags: ['Models'],
-//         body: 'TODO',
-//         lastUpdated: null,
-//     },
-// ];
+const resourcesBylines = [
+    {
+        name: 'ChatGPT',
+        byline: 'A conversational AI model by OpenAI that generates human-like responses in natural language based on user inputs.',
+    },
+    {
+        name: 'Python',
+        byline: 'A high-level, versatile programming language known for its readability and use in web development, data science, automation, and machine learning.',
+    },
+    {
+        name: 'TypeScript',
+        byline: 'A statically typed superset of JavaScript that compiles to plain JavaScript, offering improved tooling and error checking for large-scale applications.',
+    },
+    {
+        name: 'SQL',
+        byline: 'A domain-specific language used for managing and querying relational databases with structured query language.',
+    },
+    {
+        name: 'Docker',
+        byline: 'A platform for developing, shipping, and running applications in containers, ensuring consistency across multiple environments.',
+    },
+    {
+        name: 'Kubernetes',
+        byline: 'An open-source system for automating the deployment, scaling, and management of containerized applications.',
+    },
+    {
+        name: 'Harbor',
+        byline: 'An open-source container registry that stores and manages Docker images, providing security and access control.',
+    },
+    {
+        name: 'AWS EC2',
+        byline: "Amazon Web Services' Elastic Compute Cloud, offering scalable virtual servers for running applications in the cloud.",
+    },
+    {
+        name: 'AWS ECR',
+        byline: 'Amazon Elastic Container Registry, a fully managed Docker container registry for storing, managing, and deploying container images.',
+    },
+    {
+        name: 'Amazon Elastic Kubernetes Service',
+        byline: 'Amazon Elastic Kubernetes Service, a managed Kubernetes service that simplifies deploying, managing, and scaling Kubernetes applications on AWS.',
+    },
+    {
+        name: 'Git',
+        byline: 'A distributed version control system that tracks changes to source code, enabling collaboration among developers.',
+    },
+    {
+        name: 'Neovim',
+        byline: 'An open-source, extensible text editor built as an improved version of Vim, designed for modern development workflows.',
+    },
+    {
+        name: 'ReactJS',
+        byline: 'A JavaScript library for building user interfaces, especially for single-page applications, with a component-based architecture.',
+    },
+    {
+        name: 'Ollama',
+        byline: 'An AI framework that enables the deployment and interaction with large language models (LLMs) locally or on a server.',
+    },
+    {
+        name: 'Aider.chat',
+        byline: 'An AI-powered code assistant for developers that helps with debugging, writing, and optimizing code in real time.',
+    },
+    {
+        name: 'Terraform',
+        byline: 'An infrastructure-as-code tool for provisioning and managing cloud resources through declarative configuration files.',
+    },
+    {
+        name: 'CDK8s',
+        byline: 'Cloud Development Kit for Kubernetes, a framework for defining Kubernetes applications using familiar programming languages.',
+    },
+    {
+        name: 'ArgoCD',
+        byline: 'A declarative, GitOps continuous delivery tool for Kubernetes, enabling automated deployment and management of applications.',
+    },
+    {
+        name: 'Github Actions',
+        byline: 'An automation tool that integrates with GitHub repositories to run workflows for continuous integration and delivery (CI/CD).',
+    },
+    {
+        name: 'Langchain',
+        byline: 'A framework for developing applications powered by language models, enabling easy orchestration of LLMs with external tools.',
+    },
+    {
+        name: 'GraphQL',
+        byline: 'A query language for APIs and runtime for executing those queries, offering efficient, flexible, and real-time data fetching.',
+    },
+    {
+        name: 'Apollo',
+        byline: 'A GraphQL platform providing a complete ecosystem for building, querying, and managing GraphQL APIs.',
+    },
+    {
+        name: 'Redis',
+        byline: 'An in-memory key-value store used as a database, cache, and message broker, optimized for high-performance operations.',
+    },
+    {
+        name: 'RAG',
+        byline: 'Retrieval-Augmented Generation, a machine learning method that combines generative models with external knowledge retrieval for better responses.',
+    },
+    {
+        name: 'Data Analytics',
+        byline: 'The process of inspecting, cleaning, transforming, and modeling data to discover useful information for decision-making.',
+    },
+    {
+        name: 'Probabilistic Web Design',
+        byline: 'A design approach based on probabilistic models, used to optimize user interfaces based on user behavior and data.',
+    },
+    {
+        name: 'OpenAI API',
+        byline: 'A set of APIs provided by OpenAI, allowing developers to integrate advanced AI models like GPT into their applications.',
+    },
+    {
+        name: 'Grafana',
+        byline: 'An open-source platform for monitoring and visualizing time-series data, typically used for infrastructure and application monitoring.',
+    },
+    {
+        name: 'AWS CloudWatch',
+        byline: 'A monitoring and observability service for AWS cloud resources and applications, offering metrics, logs, and alarms.',
+    },
+    {
+        name: 'Prometheus',
+        byline: 'An open-source monitoring system and time-series database designed for reliability and scalability in cloud-native environments.',
+    },
+    {
+        name: 'K9s',
+        byline: 'A terminal-based UI for interacting with Kubernetes clusters, providing a fast and efficient way to manage Kubernetes resources.',
+    },
+    {
+        name: 'Nginx',
+        byline: 'A high-performance web server and reverse proxy server used to serve static content, handle load balancing, and reverse proxy for web applications.',
+    },
+    {
+        name: 'PySpark',
+        byline: 'A Python API for Apache Spark, enabling big data processing and analytics on distributed computing systems.',
+    },
+    {
+        name: 'Cython',
+        byline: 'A programming language that makes it easy to write C extensions for Python, improving performance for computationally intensive tasks.',
+    },
+    {
+        name: 'Symbolic Regression',
+        byline: 'A machine learning technique that searches for mathematical equations or models that best describe a dataset, typically used for modeling and optimization.',
+    },
+];
+
+export const resourcesData: Resource[] = resourcesData1.map((rd) => {
+    const byline = resourcesBylines.filter((rbl) => rbl.name === rd.name)[0]?.byline ?? 'N/A';
+
+    // if (byline == 'N/A') {
+    //     console.log(`issue with byline for`);
+    //     console.log(rd);
+    // }
+
+    return {
+        ...rd,
+        byline,
+    };
+});

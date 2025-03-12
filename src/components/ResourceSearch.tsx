@@ -1,22 +1,24 @@
-import React, {useState} from 'react';
-import {Select, Space, Typography} from 'antd';
-import {Tabs} from 'antd';
-import type {TabsProps} from 'antd';
-import type {Resource} from '../data/resourcesData';
-import {resourcesData} from '../data/resourcesData';
+import React, { useState } from 'react';
+import { Select, Space, Typography } from 'antd';
+import { Tabs } from 'antd';
+import type { TabsProps } from 'antd';
+import type { Resource } from '../data/resourcesData';
+import { resourcesData } from '../data/resourcesData';
 
-const {Option} = Select;
-const {Title} = Typography;
+const { Option } = Select;
+const { Title } = Typography;
 
 const ResourceContentPreview = ({
     name,
     tabKey,
     tags,
+    byline,
     onTitleClick,
 }: {
     name: string;
     tabKey: string;
     tags: string[];
+    byline: string;
     onTitleClick: (_: string) => void;
 }) => {
     const [isHovered, setIsHovered] = useState(false);
@@ -58,9 +60,10 @@ const ResourceContentPreview = ({
                     {name}
                 </span>
             </h1>
+            <h3>{byline}</h3>
 
             {/* Tags Section */}
-            <div style={{marginBottom: '1rem'}}>
+            <div style={{ marginBottom: '1rem' }}>
                 {tags.map((tag, index) => (
                     <span
                         key={index}
@@ -90,9 +93,6 @@ const ResourceSearch = ({
     resources: Resource[];
     onTitleClick: (_: string) => void;
 }) => {
-    console.log('resources in resourceSearch');
-    console.log(resources);
-
     const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
     // Flatten all tags across resources
@@ -114,14 +114,19 @@ const ResourceSearch = ({
     };
 
     return (
-        <div style={{padding: '2rem'}}>
-            <Space direction="vertical" style={{width: '100%'}}>
+        <div style={{ padding: '2rem' }}>
+            <Space direction="vertical" style={{ width: '100%' }}>
                 {/* Tag Selector */}
                 <Select
                     mode="multiple"
-                    placeholder="Select tags"
+                    placeholder="Filter by tag"
                     onChange={handleTagChange}
-                    style={{width: '100%'}}
+                    style={{
+                        width: '100%',
+                        maxWidth: '45rem',
+                        margin: '0 auto', // This centers the component horizontally
+                        display: 'block', // Ensures the select takes up block-level space
+                    }}
                 >
                     {allTags.map((tag) => (
                         <Option key={tag} value={tag}>
@@ -129,9 +134,6 @@ const ResourceSearch = ({
                         </Option>
                     ))}
                 </Select>
-
-                {/* Display Title */}
-                <Title level={3}>Filtered Topics</Title>
 
                 {/* Display filtered resources */}
                 <div>
