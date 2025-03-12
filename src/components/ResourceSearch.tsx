@@ -2,15 +2,11 @@ import React, { useState } from 'react';
 import { Select, Space, Typography } from 'antd';
 import { Tabs } from 'antd';
 import type { TabsProps } from 'antd';
+import type { Resource } from '../data/resourcesData';
+import { resourcesData } from '../data/resourcesData';
 
 const { Option } = Select;
 const { Title } = Typography;
-
-interface Resource {
-    label: string;
-    key: string;
-    tags: string[];
-}
 
 const ResourceContentPreview = ({ name, tags }: { name: string; tags: string[] }) => {
     return (
@@ -60,20 +56,20 @@ const ResourceContentPreview = ({ name, tags }: { name: string; tags: string[] }
     );
 };
 
-const ResourceSearch = ({ resourceContents }: { resourceContents: Resource[] }) => {
+const ResourceSearch = ({ resources }: { resources: Resource[] }) => {
     const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
     // Flatten all tags across resources
     const allTags = Array.from(
         new Set(
-            resourceContents
+            resources
                 .filter((content: any) => content?.tags)
                 .flatMap((content: any) => content.tags)
         )
     );
 
     // Filter resources based on selected tags
-    const filteredResources = resourceContents.filter((content: any) =>
+    const filteredResources = resourcesData.filter((content: any) =>
         selectedTags.every((tag) => content.tags.includes(tag))
     );
 

@@ -9,7 +9,8 @@ import { Row, Col } from 'antd';
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons';
 import { scrollToTop } from './navigationHelpers';
 import ResourceSearch from './components/ResourceSearch';
-import { resourceContentsData } from './resources/resourceContentsData';
+import { resourcesData } from './data/resourcesData';
+// import type {Resource} from './data/resourcesData';
 
 const ResourceContent = ({
     name,
@@ -75,13 +76,23 @@ const searchTab = {
     key: 'search',
     children: (
         <>
-            <ResourceSearch resourceContents={resourceContentsData} />
+            <ResourceSearch resources={resourcesData} />
         </>
     ),
 };
 
-const keys = [searchTab.key, ...resourceContentsData.map((rcd) => rcd.key)];
-const buttonLabels = [searchTab.label, ...resourceContentsData.map((rcd) => rcd.label)];
+const resourcesSorted = resources.sort((a, b) => {
+    if (!a.lastUpdated) {
+        return 1;
+    }
+    if (!b.lastUpdated) {
+        return 0;
+    }
+    return Number(a.lastUpdated > b.lastUpdated);
+});
+
+const keys = [searchTab.key, ...resourcesSorted.map((res) => res.key)];
+const buttonLabels = [searchTab.label, ...resourcesSorted.map((res) => res.label)];
 
 export default () => {
     const [activeIdx, setIdx] = useState(0);
@@ -100,7 +111,7 @@ export default () => {
 
     const handleNextTab = () => {
         const nextIdx = activeIdx + 1;
-        if (nextIdx < resourceContentsData.length) {
+        if (nextIdx < resources.length) {
             setIdx(nextIdx);
             scrollToTop();
         }
@@ -120,7 +131,7 @@ export default () => {
     };
 
     const ForwardButton = () => {
-        if (activeIdx < resourceContentsData.length - 1) {
+        if (activeIdx < resources.length - 1) {
             return (
                 <Button onClick={handleNextTab}>
                     <ArrowRightOutlined />
@@ -146,9 +157,7 @@ export default () => {
     };
 
     const resourceContents: TabsProps['items'] = resourceContentsData.map((rcd) => ({
-        key: rcd.key,
-        label: rcd.label,
-        name: rcd.name,
+        ...rcd,
         children: (
             <>
                 <PadRight8perc>
@@ -162,8 +171,6 @@ export default () => {
             </>
         ),
     }));
-
-    const resourceContentsWithSearch = [searchTab, ...resourceContents];
 
     return (
         <>

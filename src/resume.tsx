@@ -1,4 +1,4 @@
-import resume from './resources/Wyde_Resume_Spring_2023.pdf';
+import resume from './data/Wyde_Data_Science_CV_2025.pdf';
 import {NoMarginP, PadLeft20px} from './styled';
 import {Col, Row} from 'antd';
 import NavBar from './components/navBar';
