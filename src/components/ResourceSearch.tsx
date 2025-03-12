@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Select, Space, Typography } from 'antd';
-import { Tabs } from 'antd';
+import { Tabs, Input } from 'antd';
 import type { TabsProps } from 'antd';
 import type { Resource } from '../data/resourcesData';
 import { resourcesData } from '../data/resourcesData';
@@ -94,6 +94,7 @@ const ResourceSearch = ({
     onTitleClick: (_: string) => void;
 }) => {
     const [selectedTags, setSelectedTags] = useState<string[]>([]);
+    const [searchByName, setSearchByName] = useState<string>('');
 
     // Flatten all tags across resources
     const allTags = Array.from(
@@ -102,12 +103,17 @@ const ResourceSearch = ({
                 .filter((content: any) => content?.tags)
                 .flatMap((content: any) => content.tags)
         )
-    ).sort();
+    ).sort((a: string, b: string) => Number(a.toLowerCase() > b.toLowerCase()));
 
     // Filter resources based on selected tags
-    const filteredResources = resourcesData.filter((content: any) =>
-        selectedTags.every((tag) => content.tags.includes(tag))
-    );
+
+    const filteredResources = resources.filter((content) => {
+        const matchesTags =
+            selectedTags.length === 0 || selectedTags.every((tag) => content.tags.includes(tag));
+        const matchesName =
+            searchByName === '' || content.name.toLowerCase().includes(searchByName.toLowerCase());
+        return matchesTags && matchesName;
+    });
 
     const handleTagChange = (value: string[]) => {
         setSelectedTags(value);
@@ -116,6 +122,19 @@ const ResourceSearch = ({
     return (
         <div style={{ padding: '2rem' }}>
             <Space direction="vertical" style={{ width: '100%' }}>
+                {/* Search by Name */}
+                <Input
+                    placeholder="Search by name"
+                    value={searchByName}
+                    onChange={(e) => setSearchByName(e.target.value)}
+                    style={{
+                        width: '100%',
+                        maxWidth: '45rem',
+                        margin: '0 auto',
+                        display: 'block',
+                    }}
+                />
+
                 {/* Tag Selector */}
                 <Select
                     mode="multiple"
@@ -142,11 +161,14 @@ const ResourceSearch = ({
                     ) : (
                         filteredResources.map((content: any) => {
                             return (
-                                <ResourceContentPreview
-                                    {...content}
-                                    tabKey={content.key}
-                                    onTitleClick={onTitleClick}
-                                />
+                                <>
+                                    <ResourceContentPreview
+                                        {...content}
+                                        tabKey={content.key}
+                                        onTitleClick={onTitleClick}
+                                    />
+                                    <br />
+                                </>
                             );
                         })
                     )}

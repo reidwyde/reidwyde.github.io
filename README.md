@@ -16,7 +16,8 @@ My Name is Reid Wyde
 
 -   standardize the naming of the amazon resources
 -   make it so you can navigate to /resources/<resourceKey> via the URL and that the left side tabs manipulate the URL (might be overly complicated if we don't just use routes)
--   fix resource card styling (remove gray backgrounds)
+-   change resource card styling (remove gray backgrounds)
 -   Add models / machine learning techniques
+-   mobile formatting
 -   clean up repo, remove dead files
 -   look at tasks in asana https://app.asana.com/0/1209634409867749/1209634505469345

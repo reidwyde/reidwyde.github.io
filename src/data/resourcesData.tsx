@@ -17,7 +17,7 @@ const resourcesData1: Omit<Resource, 'byline'>[] = [
         label: 'ChatGPT',
         key: 'chatGPT',
 
-        tags: ['AI', 'Natural Language Processing', 'Productivity'],
+        tags: ['AI', 'NLP', 'productivity'],
         body: (
             <>
                 <a href="https://platform.openai.com/docs/guides/chat">ChatGPT Documentation</a>
@@ -32,7 +32,7 @@ const resourcesData1: Omit<Resource, 'byline'>[] = [
         label: 'Python',
         key: 'python',
 
-        tags: ['Programming Languages'],
+        tags: ['programming languages'],
         body: (
             <>
                 <a href="https://docs.python.org/3/">Python Documentation</a>
@@ -47,7 +47,7 @@ const resourcesData1: Omit<Resource, 'byline'>[] = [
         label: 'TypeScript',
         key: 'typeScript',
 
-        tags: ['Programming Languages', 'Frontend', 'JavaScript'],
+        tags: ['programming languages', 'UI/UX', 'JavaScript'],
         body: (
             <>
                 <a href="https://www.typescriptlang.org/docs/">TypeScript Documentation</a>
@@ -62,7 +62,7 @@ const resourcesData1: Omit<Resource, 'byline'>[] = [
         label: 'SQL',
         key: 'sql',
 
-        tags: ['Programming Languages', 'Databases'],
+        tags: ['programming languages', 'databases'],
         body: (
             <>
                 <a href="https://www.w3schools.com/sql/">SQL Tutorial</a>
@@ -77,7 +77,7 @@ const resourcesData1: Omit<Resource, 'byline'>[] = [
         label: 'Docker',
         key: 'docker',
 
-        tags: ['Containerization', 'Cloud', 'DevOps'],
+        tags: ['containerization', 'cloud', 'DevOps'],
         body: (
             <>
                 <a href="https://docs.docker.com/">Docker Documentation</a>
@@ -92,7 +92,7 @@ const resourcesData1: Omit<Resource, 'byline'>[] = [
         label: 'Kubernetes',
         key: 'kubernetes',
 
-        tags: ['DevOps', 'Cloud', 'Kubernetes'],
+        tags: ['DevOps', 'cloud', 'Kubernetes'],
         body: (
             <>
                 <a href="https://kubernetes.io/docs/">Kubernetes Documentation</a>
@@ -107,7 +107,7 @@ const resourcesData1: Omit<Resource, 'byline'>[] = [
         label: 'Harbor',
         key: 'harbor',
 
-        tags: ['DevOps', 'Containerization'],
+        tags: ['DevOps', 'containerization'],
         body: (
             <>
                 <a href="https://goharbor.io/docs/">Harbor Documentation</a>
@@ -122,7 +122,7 @@ const resourcesData1: Omit<Resource, 'byline'>[] = [
         label: 'AWS EC2',
         key: 'awsEc2',
 
-        tags: ['AWS', 'Cloud', 'DevOps'],
+        tags: ['AWS', 'cloud', 'DevOps'],
         body: (
             <>
                 <a href="https://docs.aws.amazon.com/ec2/">AWS EC2 Documentation</a>
@@ -137,7 +137,7 @@ const resourcesData1: Omit<Resource, 'byline'>[] = [
         label: 'AWS ECR',
         key: 'awsEcr',
 
-        tags: ['AWS', 'Cloud', 'Container Registry', 'DevOps'],
+        tags: ['AWS', 'cloud', 'containerization', 'DevOps'],
         body: (
             <>
                 <a href="https://docs.aws.amazon.com/ecr/">AWS ECR Documentation</a>
@@ -151,7 +151,7 @@ const resourcesData1: Omit<Resource, 'byline'>[] = [
         label: 'AWS EKS',
         key: 'aws_eks',
         name: 'Amazon Elastic Kubernetes Service',
-        tags: ['AWS', 'Cloud', 'DevOps', 'Kubernetes'],
+        tags: ['AWS', 'cloud', 'DevOps', 'Kubernetes'],
         body: (
             <>
                 <a href="https://docs.aws.amazon.com/eks/">Amazon EKS Documentation</a>
@@ -180,7 +180,7 @@ const resourcesData1: Omit<Resource, 'byline'>[] = [
         name: 'Git',
         label: 'Git',
         key: 'git',
-        tags: ['DevOps', 'Version Control', 'Productivity'],
+        tags: ['DevOps', 'Version Control', 'productivity'],
         body: (
             <>
                 <a href="https://git-scm.com/doc">Git Documentation</a>
@@ -194,7 +194,7 @@ const resourcesData1: Omit<Resource, 'byline'>[] = [
         name: 'Neovim',
         label: 'Neovim',
         key: 'neovim',
-        tags: ['Productivity'],
+        tags: ['productivity'],
         body: (
             <>
                 <a href="https://neovim.io/">Neovim Official Website</a>
@@ -208,7 +208,7 @@ const resourcesData1: Omit<Resource, 'byline'>[] = [
         name: 'ReactJS',
         label: 'ReactJS',
         key: 'reactJS',
-        tags: ['Frontend', 'JavaScript'],
+        tags: ['UI/UX', 'JavaScript'],
         body: (
             <>
                 <a href="https://reactjs.org/docs/getting-started.html">ReactJS Documentation</a>
@@ -222,7 +222,7 @@ const resourcesData1: Omit<Resource, 'byline'>[] = [
         name: 'Ollama',
         label: 'Ollama',
         key: 'ollama',
-        tags: ['AI', 'Natural Language Processing', 'Productivity'],
+        tags: ['AI', 'NLP', 'productivity'],
         body: (
             <>
                 <a href="https://ollama.com/">Ollama Documentation</a>
@@ -237,7 +237,7 @@ const resourcesData1: Omit<Resource, 'byline'>[] = [
         label: 'Aider.chat',
         key: 'aiderChat',
 
-        tags: ['AI', 'Productivity'],
+        tags: ['AI', 'productivity'],
         body: (
             <>
                 <a href="https://aider.chat">Aider.chat</a>
@@ -312,7 +312,7 @@ const resourcesData1: Omit<Resource, 'byline'>[] = [
         label: 'Langchain',
         key: 'langchain',
 
-        tags: ['AI', 'Productivity', 'Automation'],
+        tags: ['AI', 'productivity', 'automation'],
         body: (
             <>
                 <a href="https://langchain.com/docs/">Langchain Documentation</a>
@@ -327,7 +327,7 @@ const resourcesData1: Omit<Resource, 'byline'>[] = [
         label: 'GraphQL',
         key: 'graphQL',
 
-        tags: ['Programming Languages', 'Databases'],
+        tags: ['programming languages', 'databases'],
         body: (
             <>
                 <a href="https://graphql.org/learn/">GraphQL Documentation</a>
@@ -342,7 +342,7 @@ const resourcesData1: Omit<Resource, 'byline'>[] = [
         label: 'Apollo',
         key: 'apollo',
 
-        tags: ['Frontend', 'JavaScript', 'Databases'],
+        tags: ['UI/UX', 'JavaScript', 'databases'],
 
         body: (
             <>
@@ -358,7 +358,7 @@ const resourcesData1: Omit<Resource, 'byline'>[] = [
         label: 'Redis',
         key: 'redis',
 
-        tags: ['Databases'],
+        tags: ['databases'],
         body: (
             <>
                 <a href="https://redis.io/docs/">Redis Documentation</a>
@@ -373,7 +373,7 @@ const resourcesData1: Omit<Resource, 'byline'>[] = [
         label: 'RAG',
         key: 'rag',
 
-        tags: ['AI', 'Automation'],
+        tags: ['AI', 'automation'],
         body: (
             <>
                 <YouTubeEmbed videoUrl="https://www.youtube.com/watch?v=hAdEuDBN57g" />
@@ -390,7 +390,13 @@ const resourcesData1: Omit<Resource, 'byline'>[] = [
         key: 'dataAnalytics',
 
         tags: ['Analytics'],
-        body: 'TODO',
+        body: (
+            <>
+                <YouTubeEmbed videoUrl="https://www.youtube.com/watch?v=jzKpAtzKQ54" />
+                <br />
+                <br />
+            </>
+        ),
         lastUpdated: null,
     },
     {
@@ -398,7 +404,7 @@ const resourcesData1: Omit<Resource, 'byline'>[] = [
         label: 'Probabilistic Web Design',
         key: 'probabilisticWebDesign',
 
-        tags: ['Analytics', 'Frontend', 'Reinforcement Learning'],
+        tags: ['Analytics', 'UI/UX', 'RL'],
         body: (
             <>
                 <a href="https://stevehanov.ca/blog/index.php?id=132">
@@ -410,8 +416,8 @@ const resourcesData1: Omit<Resource, 'byline'>[] = [
                 <br />
                 <br />
                 <a href="https://web.stanford.edu/class/psych209/Readings/SuttonBartoIPRLBook2ndEd.pdf">
-                    Sutton and Barto textbook on Reinforcement Learning (the relevant section is
-                    Chatper 2 Multi-arm Bandits)
+                    Sutton and Barto textbook on reinforcement learning (the relevant section is
+                    Chatper 2 "Multi-arm Bandits")
                 </a>
                 <br />
                 <br />
@@ -424,7 +430,7 @@ const resourcesData1: Omit<Resource, 'byline'>[] = [
         label: 'OpenAI API',
         key: 'openAiApi',
 
-        tags: ['AI', 'Productivity', 'Automation'],
+        tags: ['AI', 'productivity', 'automation'],
         body: (
             <>
                 <a href="https://platform.openai.com/docs">OpenAI API Documentation</a>
@@ -450,14 +456,14 @@ const resourcesData1: Omit<Resource, 'byline'>[] = [
         lastUpdated: new Date('3-11-25'),
     },
     {
-        name: 'AWS CloudWatch',
-        label: 'AWS CloudWatch',
-        key: 'awsCloudWatch',
+        name: 'AWS cloudWatch',
+        label: 'AWS cloudWatch',
+        key: 'awscloudWatch',
 
         tags: ['AWS', 'cloud', 'observability'],
         body: (
             <>
-                <a href="https://docs.aws.amazon.com/cloudwatch/">AWS CloudWatch Documentation</a>
+                <a href="https://docs.aws.amazon.com/cloudwatch/">AWS cloudWatch Documentation</a>
                 <br />
                 <br />
             </>
@@ -529,7 +535,7 @@ const resourcesData1: Omit<Resource, 'byline'>[] = [
         label: 'Cython',
         key: 'cython',
 
-        tags: ['Programming Languages'],
+        tags: ['programming languages'],
         body: (
             <>
                 <a href="https://cython.readthedocs.io/en/latest/">Cython Documentation</a>
@@ -589,7 +595,7 @@ const resourcesBylines = [
     },
     {
         name: 'AWS EC2',
-        byline: "Amazon Web Services' Elastic Compute Cloud, offering scalable virtual servers for running applications in the cloud.",
+        byline: "Amazon Web Services' Elastic Compute cloud, offering scalable virtual servers for running applications in the cloud.",
     },
     {
         name: 'AWS ECR',
@@ -625,7 +631,7 @@ const resourcesBylines = [
     },
     {
         name: 'CDK8s',
-        byline: 'Cloud Development Kit for Kubernetes, a framework for defining Kubernetes applications using familiar programming languages.',
+        byline: 'cloud Development Kit for Kubernetes, a framework for defining Kubernetes applications using familiar programming languages.',
     },
     {
         name: 'ArgoCD',
@@ -672,7 +678,7 @@ const resourcesBylines = [
         byline: 'An open-source platform for monitoring and visualizing time-series data, typically used for infrastructure and application monitoring.',
     },
     {
-        name: 'AWS CloudWatch',
+        name: 'AWS cloudWatch',
         byline: 'A monitoring and observability service for AWS cloud resources and applications, offering metrics, logs, and alarms.',
     },
     {
