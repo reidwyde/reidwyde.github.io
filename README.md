@@ -14,6 +14,7 @@ My Name is Reid Wyde
 
 ### TODO:
 
+-   make it so you can navigate to /resources/<resourceKey> via the URL and that the left side tabs manipulate the URL (might be overly complicated if we don't just use routes)
 -   add byline to resources
 -   Add models / machine learning techniques
 -   clean up repo, remove dead files

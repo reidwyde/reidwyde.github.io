@@ -102,6 +102,19 @@ export default () => {
     const keys = [searchTab.key, ...resourcesSorted.map((res) => res.key)];
     const buttonLabels = [searchTab.label, ...resourcesSorted.map((res) => res.label)];
 
+    const BackToSearchButton = () => {
+        return (
+            <Button
+                onClick={() => {
+                    setIdx(0);
+                    scrollToTop();
+                }}
+            >
+                Back To Resources Search
+            </Button>
+        );
+    };
+
     const handlePrevTab = () => {
         const prevIdx = activeIdx - 1;
         if (prevIdx > 0) {
@@ -163,6 +176,10 @@ export default () => {
             ...rcd,
             children: (
                 <>
+                    <Centered>
+                        <BackToSearchButton />
+                    </Centered>
+
                     <PadRight8perc>
                         <BackwardForwardButtons />
                     </PadRight8perc>
