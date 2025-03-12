@@ -14,9 +14,7 @@ My Name is Reid Wyde
 
 ### TODO:
 
--   EKS resources
--   Docker resources
--   start from the top and fill in
+-   add byline to resources
 -   Add models / machine learning techniques
 -   clean up repo, remove dead files
 -   look at tasks in asana https://app.asana.com/0/1209634409867749/1209634505469345
