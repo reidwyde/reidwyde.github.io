@@ -21,3 +21,4 @@ My Name is Reid Wyde
 -   mobile formatting
 -   clean up repo, remove dead files
 -   look at tasks in asana https://app.asana.com/0/1209634409867749/1209634505469345
+-   add resources for avante and for manus

@@ -338,6 +338,99 @@ const resourcesData1: Omit<Resource, 'byline'>[] = [
         lastUpdated: new Date('3-11-25'),
     },
     {
+        name: 'Network Analysis',
+        label: 'Network Analysis',
+        key: 'networkAnalysis',
+
+        tags: ['databases', 'graphs', 'networks'],
+        body: (
+            <>
+                <a href="https://en.wikipedia.org/wiki/Network_science">
+                    Network Science Wikipedia
+                </a>
+                <br />
+                <br />
+
+                <a href="https://en.wikipedia.org/wiki/Graph_theory">Graph Theory Wikipedia</a>
+                <br />
+                <br />
+
+                <a href="https://en.wikipedia.org/wiki/Network_theory">Network Theory Wikipedia</a>
+                <br />
+                <br />
+
+                <a href="https://networkx.org/documentation/stable/tutorial.html">
+                    NetworkX Tutorial
+                </a>
+                <br />
+                <br />
+
+                <YouTubeEmbed videoUrl="https://www.youtube.com/watch?v=rldKl1CNx-A" />
+                <br />
+                <br />
+
+                <a href="https://en.wikipedia.org/wiki/Laplacian_matrix">
+                    Graph Laplacian Wikipedia
+                </a>
+                <br />
+                <br />
+
+                <YouTubeEmbed videoUrl="https://www.youtube.com/watch?v=EW08rD-GFh0" />
+                <br />
+                <br />
+
+                <a href="https://en.wikipedia.org/wiki/Louvain_method">
+                    Louvain Community Detection Algorithm
+                </a>
+                <br />
+                <br />
+
+                <YouTubeEmbed videoUrl="https://www.youtube.com/watch?v=wLyAJj6da9g" />
+                <br />
+                <br />
+
+                <a href="http://amzn.to/3aDO69p">Amazon Neptune Documentation</a>
+                <br />
+                <br />
+
+                <YouTubeEmbed videoUrl="https://www.youtube.com/watch?v=YmR2_zlQO5w" />
+                <br />
+                <br />
+
+                <a href="https://en.wikipedia.org/wiki/ACID">
+                    ACID Properties in Databases Wikipedia
+                </a>
+                <br />
+                <br />
+
+                <YouTubeEmbed videoUrl="https://www.youtube.com/watch?v=GAe5oB742dw" />
+                <br />
+                <br />
+
+                <a href="https://neo4j.com/docs/graph-data-science-client/current/tutorials/tutorials/">
+                    Neo4j Graph Data Science Tutorials
+                </a>
+                <br />
+                <br />
+
+                <YouTubeEmbed videoUrl="https://www.youtube.com/watch?v=T6L9EoBy8Zk" />
+                <br />
+                <br />
+
+                <a href="https://en.wikipedia.org/wiki/Electric_power_distribution">
+                    Electrical Power Distribution
+                </a>
+                <br />
+                <br />
+
+                <YouTubeEmbed videoUrl="https://www.youtube.com/watch?v=ld1tR8Oom5U" />
+                <br />
+                <br />
+            </>
+        ),
+        lastUpdated: new Date('3-17-25'),
+    },
+    {
         name: 'Apollo',
         label: 'Apollo',
         key: 'apollo',
@@ -648,6 +741,10 @@ const resourcesBylines = [
     {
         name: 'GraphQL',
         byline: 'A query language for APIs and runtime for executing those queries, offering efficient, flexible, and real-time data fetching.',
+    },
+    {
+        name: 'Network Analysis',
+        byline: 'Network analysis (or graph analysis) is the study of relationships and structures in a system by modeling entities as nodes and their interactions as edges, enabling insights into connectivity, influence, and patterns in data.',
     },
     {
         name: 'Apollo',
