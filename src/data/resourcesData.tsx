@@ -389,6 +389,10 @@ const resourcesData1: Omit<Resource, 'byline'>[] = [
                 <br />
                 <br />
 
+                <YouTubeEmbed videoUrl="https://www.youtube.com/watch?v=ld1tR8Oom5U" />
+                <br />
+                <br />
+
                 <a href="http://amzn.to/3aDO69p">Amazon Neptune Documentation</a>
                 <br />
                 <br />
@@ -424,6 +428,10 @@ const resourcesData1: Omit<Resource, 'byline'>[] = [
                 <br />
 
                 <YouTubeEmbed videoUrl="https://www.youtube.com/watch?v=ld1tR8Oom5U" />
+                <br />
+                <br />
+
+                <YouTubeEmbed videoUrl="https://www.youtube.com/watch?v=Pat3NeUnIZ0" />
                 <br />
                 <br />
             </>
