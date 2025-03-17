@@ -389,6 +389,10 @@ const resourcesData1: Omit<Resource, 'byline'>[] = [
                 <br />
                 <br />
 
+                <a href="https://en.wikipedia.org/wiki/Link_analysis">Link Analysis</a>
+                <br />
+                <br />
+
                 <YouTubeEmbed videoUrl="https://www.youtube.com/watch?v=ld1tR8Oom5U" />
                 <br />
                 <br />
