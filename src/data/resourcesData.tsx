@@ -11,7 +11,18 @@ export type Resource = {
     byline: string;
 };
 
-const resourcesData1: Omit<Resource, 'byline'>[] = [
+// TODO merge the bylines into the resources
+export type ResourceMaybeNoByline = {
+    label: string;
+    key: string;
+    name: string;
+    tags: string[];
+    body: React.ReactNode;
+    lastUpdated: null | Date;
+    byline?: string;
+};
+
+const resourcesData1: (Resource | ResourceMaybeNoByline)[] = [
     {
         name: 'ChatGPT',
         label: 'ChatGPT',
@@ -434,13 +445,30 @@ const resourcesData1: Omit<Resource, 'byline'>[] = [
                 <YouTubeEmbed videoUrl="https://www.youtube.com/watch?v=ld1tR8Oom5U" />
                 <br />
                 <br />
+            </>
+        ),
+        lastUpdated: new Date('3-18-25'),
+    },
+    {
+        name: 'Linear Algebra',
+        label: 'Linear Algebra',
+        key: 'linearAlgebra',
+        tags: ['math'],
+        byline: 'Linear algebra is the branch of mathematics that studies vectors, vector spaces, and linear transformations using matrices and systems of equations.',
+        body: (
+            <>
+                <a href="https://www.amazon.com/Applied-Linear-Algebra-Lorenzo-Sadun/dp/0821844415">
+                    {`Dr. Lorenzo Sadun's "The Decoupling Principle" texbook`}
+                </a>
+                <br />
+                <br />
 
                 <YouTubeEmbed videoUrl="https://www.youtube.com/watch?v=Pat3NeUnIZ0" />
                 <br />
                 <br />
             </>
         ),
-        lastUpdated: new Date('3-17-25'),
+        lastUpdated: new Date('3-18-25'),
     },
     {
         name: 'Apollo',
@@ -561,7 +589,7 @@ const resourcesData1: Omit<Resource, 'byline'>[] = [
         lastUpdated: new Date('3-11-25'),
     },
     {
-        name: 'AWS cloudWatch',
+        name: 'AWS CloudWatch',
         label: 'AWS cloudWatch',
         key: 'awscloudWatch',
 
@@ -817,6 +845,10 @@ const resourcesBylines = [
 ];
 
 export const resourcesData: Resource[] = resourcesData1.map((rd) => {
+    if (rd?.byline) {
+        return rd as Resource;
+    }
+
     const byline = resourcesBylines.filter((rbl) => rbl.name === rd.name)[0]?.byline ?? 'N/A';
 
     // if (byline == 'N/A') {
