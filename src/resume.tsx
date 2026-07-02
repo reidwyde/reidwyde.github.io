@@ -60,12 +60,7 @@ const Resume = () => {
                         <br />
                         <b>Links</b>
                         <NoMarginP>
-                            <a href="https://www.linkedin.com/in/reidwyde">
-                                linkedin.com/in/reidwyde
-                            </a>
-                        </NoMarginP>
-                        <NoMarginP>
-                            <a href="reidwyde.github.io">reidwyde.github.io (this site)</a>
+                            <a href="https://thelastconsultant.com">thelastconsultant.com (this site)</a>
                         </NoMarginP>
                         <br />
                         <SectionHeader>Skills</SectionHeader>
