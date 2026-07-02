@@ -9,7 +9,7 @@ export default ({ activeTabKey }: { activeTabKey: string }) => {
     const navigate = useNavigate();
 
     const onTabClick = (key: string) => {
-        navigate(`/${key}`);
+        navigate(key === 'home' ? '/' : `/${key}`);
     };
 
     const onTabChange = () => {

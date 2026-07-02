@@ -12,12 +12,8 @@ import Resources from './resources';
 import Error404Page from './error_404_page';
 
 const router = createBrowserRouter([
-    {
-        path: '/',
-        element: <Navigate to="/home" replace={true} />,
-    },
-
-    { path: '/home', element: <Home /> },
+    { path: '/', element: <Home /> },
+    { path: '/home', element: <Navigate to="/" replace={true} /> },
     { path: '/resume', element: <Resume /> },
     { path: '/research', element: <Research /> },
     { path: '/machine-learning-course', element: <MLCourse /> },
