@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import { createHashRouter, RouterProvider, Navigate } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
 import Home from './home';
 import Resume from './resume';
 import Research from './research';
@@ -11,7 +11,7 @@ import MLOpsCourse from './ml_ops_course';
 import Resources from './resources';
 import Error404Page from './error_404_page';
 
-const router = createHashRouter([
+const router = createBrowserRouter([
     {
         path: '/',
         element: <Navigate to="/home" replace={true} />,

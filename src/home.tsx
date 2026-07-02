@@ -192,8 +192,8 @@ const Home = () => {
                     <div>© 2026 Reid Wyde · The Last Consultant</div>
                     <div className="tlc-fnav">
                         <a href="mailto:reidwyde@gmail.com">reidwyde@gmail.com</a>
-                        <a href="#/resume">Résumé</a>
-                        <a href="#/research">Research</a>
+                        <a href="/resume">Résumé</a>
+                        <a href="/research">Research</a>
                     </div>
                 </div>
             </footer>
