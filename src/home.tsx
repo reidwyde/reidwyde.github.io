@@ -62,7 +62,11 @@ const Home = () => {
         })(window, 'https://app.cal.com/embed/embed.js', 'init');
         const Cal = (window as any).Cal;
         Cal('init', { origin: 'https://cal.com' });
-        Cal('inline', { elementOrSelector: '#tlc-cal', calLink: CAL_LINK, layout: 'month_view' });
+        Cal('inline', {
+            elementOrSelector: '#tlc-cal',
+            calLink: CAL_LINK,
+            config: { theme: 'dark', layout: 'month_view' },
+        });
         Cal('ui', {
             theme: 'dark',
             hideEventTypeDetails: false,
@@ -176,6 +180,7 @@ const Home = () => {
                         <p>30 minutes. We'll find the biggest, fastest win in your business — whether or not we work together.</p>
                     </div>
                     <div className="tlc-glass tlc-book-embed">
+                        <div className="tlc-cal-loading">Loading your calendar…</div>
                         <div id="tlc-cal" className="tlc-cal" />
                     </div>
                 </div>

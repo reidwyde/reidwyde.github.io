@@ -80,8 +80,9 @@
 
 /* book */
 .tlc-book{text-align:center}
-.tlc-book-embed{margin:30px auto 0;max-width:900px;padding:14px}
-.tlc-cal{min-height:620px;width:100%;overflow:hidden;border-radius:14px}
+.tlc-book-embed{position:relative;margin:30px auto 0;max-width:900px;padding:14px}
+.tlc-cal-loading{position:absolute;inset:14px;z-index:0;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:14px}
+.tlc-cal{position:relative;z-index:1;min-height:620px;width:100%;overflow:hidden;border-radius:14px}
 .tlc-book-fallback{color:var(--muted);font-size:14px;border:1px dashed rgba(127,176,255,.3);border-radius:14px;padding:44px 30px}
 
 /* footer */
